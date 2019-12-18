@@ -2,23 +2,32 @@ null  :=
 space := $(null) #
 comma := ,
 
+ext := out
+
+cash := __pycache__
+virt_env := proj
+saved := saved_output_u
+pre := update_
+log := _log.$(ext)
+data := _dataset.csv
+
 u1_dir ?= update_1
-ex_1_parts := $(u1_dir)/__pycache__ $(u1_dir)/proj $(u1_dir)/saved_output_u1.out $(u1_dir)/update_1_log.out $(u1_dir)/update_1_dataset.csv
+ex_1_parts := $(u1_dir)/$(cash) $(u1_dir)/$(virt_env) $(u1_dir)/$(saved)1.$(ext) $(u1_dir)/$(pre)1$(log) $(u1_dir)/$(pre)1$(data)
 ex_1_comp := $(foreach part, $(ex_1_parts), $(part))
 ex_1_list := $(subst $(space),$(comma),$(strip $(ex_1_comp)))
 
 u2_dir ?= update_2
-ex_2_parts := $(u2_dir)/__pycache__ $(u2_dir)/proj $(u2_dir)/saved_output_u2.out $(u2_dir)/update_2_log.out $(u2_dir)/update_2_dataset.csv
+ex_2_parts := $(u2_dir)/$(cash) $(u2_dir)/$(virt_env) $(u2_dir)/$(saved)2.$(ext) $(u2_dir)/$(pre)2$(log) $(u2_dir)/$(pre)2$(data)
 ex_2_comp := $(foreach part, $(ex_2_parts), $(part))
 ex_2_list := $(subst $(space),$(comma),$(strip $(ex_2_comp)))
 
 u3_dir ?= update_3
-ex_3_parts := $(u3_dir)/__pycache__ $(u3_dir)/proj $(u3_dir)/saved_output_u3.out $(u3_dir)/update_3_log.out $(u3_dir)/update_3_dataset.csv
+ex_3_parts := $(u3_dir)/$(cash) $(u3_dir)/$(virt_env) $(u3_dir)/$(saved)3.$(ext) $(u3_dir)/$(pre)3$(log) $(u3_dir)/$(pre)3$(data)
 ex_3_comp := $(foreach part, $(ex_3_parts), $(part))
 ex_3_list := $(subst $(space),$(comma),$(strip $(ex_3_comp)))
 
 utils_dir ?= utilities
-ex_u_parts := $(utils_dir)/__pycache__
+ex_u_parts := $(utils_dir)/$(cash)
 ex_u_comp := $(foreach part, $(ex_u_parts), $(part))
 ex_u_list := $(subst $(space),$(comma),$(strip $(ex_u_comp)))
 
