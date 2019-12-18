@@ -1,4 +1,4 @@
-#!/usr/bin/env Python
+#!/usr/local/bin/python3
 # coding: utf-8
 
 #--------------------------------------------- Import Necessary Libraries --------------------------------------------#
@@ -12,7 +12,7 @@ import sys
 
 #------------------------------------------------------- Setup -------------------------------------------------------#
 
-warnings.filterwarnings('ignore') # ignore warnings ; for 0 valued F1 scores
+warnings.filterwarnings("ignore") # ignore warnings ; for 0 valued F1 scores
 
 #---------------------------------------------- Utilities Implementation ---------------------------------------------#
 
@@ -22,7 +22,7 @@ def encode_target(df, target_column):
   targets = df_mod[target_column].unique() # NEUTRAL & INSECURE
   map_to_int = {name: n for n, name in enumerate(targets)} # [NEUTRAL, INSECURE] => [0, 1]
   df_mod["TARGET"] = df_mod[target_column].replace(map_to_int)
-  print "Dataset after encoding the target column:", "\n", df_mod.head(), "\n"
+  print("\nDataset after encoding the target column:", "\n", df_mod.head())
   return (df_mod, targets)
 
 
@@ -52,24 +52,24 @@ def encode_string_column(df, string_column):
   targets = df_mod[string_column].unique() # "ComputationalChemistry, Astronomy, ..."
   map_to_int = {name: n for n, name in enumerate(targets)} # [NEUTRAL, INSECURE] => [0, 1]
   df_mod[string_column] = df_mod[string_column].replace(map_to_int)
-  print "Dataset after encoding the string column:", "\n", df_mod.head(), "\n"
+  print("\nDataset after encoding the string column:", "\n", df_mod.head())
   return (df_mod, targets)
 
 
 ''' Perform generic classification and calculate cross-validation accuracy, precision, recall, and F1 score. '''
 def classification(classifier, features, df, folds, model, targets):
-  print "\t", model, "Model Features:", features
+  print("\t" + model, "Model Features:", features)
   X_data = df[features] # the data to fit
   y_target = df["TARGET"] # the target variable to try to predict
   prediction = cross_val_predict(classifier, X_data, y_target, cv=folds) # return a list of predicted values
   scores = list(cross_val_score(classifier, X_data, y_target, cv=folds)) # return <folds> sized list of cross-validation accuracy values
   scores_rounded = [round(elem, 4) for elem in scores]
-  print "\tTesting Phase Accuracy, per fold, across " + str(folds) + " folds:", scores_rounded
-  print "\tCross-Validation Score Accuracy: Average %0.4f (± %0.4f) with median %0.4f" % (stats.mean(scores), stats.stdev(scores) * 2, stats.median(scores))
-  print "\tCross-Validation Prediction Classification Report:"
-  print metric.classification_report(y_target, prediction, digits=4, target_names=targets) # report metrics based on true target values vs. predicted values
+  print("\tTesting Phase Accuracy, per fold, across " + str(folds) + " folds:", scores_rounded)
+  print("\tCross-Validation Score Accuracy: Average %0.4f (± %0.4f) with median %0.4f" % (stats.mean(scores), stats.stdev(scores) * 2, stats.median(scores)))
+  print("\tCross-Validation Prediction Classification Report:")
+  print(metric.classification_report(y_target, prediction, digits=4, target_names=targets)) # report metrics based on true target values vs. predicted values
   count_true_false_neg_pos(y_target, prediction) # count and print the quantity of TN, FN, FP, & TP
-  print "––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n" 
+  print("––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––\n" )
 
 
 ''' Count and print the quantity of True Negatives, False Negatives, False Positives, and True Positives '''
@@ -81,12 +81,12 @@ def count_true_false_neg_pos(true, pred):
     elif (true[i] == 1 and pred[i] == 0): fp += 1
     elif (true[i] == 1 and pred[i] == 1): tp += 1
     else:
-      print "ERROR::004::COUNTING_ERROR"
+      print("ERROR::004::COUNTING_ERROR")
       sys.exit()
 
-  print "\tTrue Negatives: " + str(tn)
-  print "\tFalse Negatives: " + str(fn)
-  print "\tFalse Positives: " + str(fp)
-  print "\tTrue Positives: " + str(tp) + "\n"
+  print("\tTrue Negatives: " + str(tn))
+  print("\tFalse Negatives: " + str(fn))
+  print("\tFalse Positives: " + str(fp))
+  print("\tTrue Positives: " + str(tp) + "\n")
 
 #---------------------------------------------------------------------------------------------------------------------#

@@ -1,8 +1,8 @@
-#!/usr/bin/env Python
+#!/usr/local/bin/python3
 # coding: utf-8
 
 '''
-Filename: update_2_main.py
+Filename: update_2_main_p3.py
 Authors: Jonathan A. Gibson, Andrew P. Worley, & Raunak S. Hakya
 Objectives:
 	Type-based model: REPO_TYPE
@@ -12,7 +12,7 @@ Objectives:
 
 	Repeat the following steps for type-based model, size-based model, time-based model, and full model:
 	1. Take CSV as input, separate out independent columns(s), and the dependent column is SECU_FLAG.
-	2. Apply Decision Tree, Random Forest, ANN (Artificial Neural Network), kNN (k Nearest Neighbor), & Naïve Bayes
+	2. Apply Decision Tree, Random Forest, ANN (Artificial Neural Network), kNN (k Nearest Neighbor), & Naïve Bayes classification algorithms.
 	3. Apply 10-by-10 fold cross validation, and then report prediction accuracy using precision, recall, and F-measure.
 Notes:
 	Naïve Bayes Reference(s):
@@ -63,56 +63,58 @@ import pdb # for Python debugging
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "utilities")) # add "../utilities" to module import search path
 import logger # for custom "Logger" class
-import update_2_utils as u2u # for custom "update_2_utils" utility functions
+import update_2_utils_p3 as u2u_p3 # for custom "update_2_utils" utility functions
 
 #-------------------------------------------- Check Command Line Arguments -------------------------------------------#
 
-print "\nProgram Name: ", sys.argv[0]
-print "Number of command line arguments: ", len(sys.argv)
-print "The command line argument(s) are: " , str(sys.argv), "\n"
+print("\nProgram Name: ", sys.argv[0])
+print("Number of command line arguments:", len(sys.argv))
+print("The command line argument(s) are:" , str(sys.argv))
 
 if(len(sys.argv) != 2):
-	print "ERROR::160::BAD_ARGUMENTS"
-	print "Run program with the following format: \'Python update_2_main.py \"<log_file>\"\' or use \'make run\'.\n"
+	print("ERROR::160::BAD_ARGUMENTS")
+	print("Run program with the following format: \'python update_2_main_p#.py \"<log_file>\"\'; alternatively use \'make run2\' or \'make run3\' for Python2 and Python3 appropriate scripts respectively.\n")
 	sys.exit()
 
 #------------------------------------------------- Load Dataset File -------------------------------------------------#
 
-valid_dataset_names = ["ProjectUpdate2-Dataset.csv", "dataset.csv", "Dataset.csv", "DATASET.csv", "test.csv"]
+valid_dataset_names = ["update_2_dataset.csv", "dataset.csv", "Dataset.csv", "DATASET.csv"]
 
 for d in valid_dataset_names:
 	if(os.path.exists(d)):
-		print "Loading dataset file..."
+		print("\nLoading dataset file...")
 		df = pd.read_csv(d)
-		print "Done.\n"
+		print("Done.")
 		break
 	else:
-		print "ERROR::002::FILE_NOT_FOUND"
-		print "Place project dataset file in root directory with one of the following valid dataset file names:\n", valid_dataset_names, "\n"
+		print("ERROR::002::FILE_NOT_FOUND")
+		print("Place project dataset file in root directory with one of the following valid dataset file names:\n", valid_dataset_names, "\n")
 		sys.exit()
 
-print "Dataset datatypes:\n", df.dtypes, "\n"
-print "Dataset original shape:", df.shape, "\n"
-print "Original dataset:", "\n", df.head(), "\n"
+print("\nDataset datatypes:")
+print(df.dtypes)
+print("\nDataset original shape:", df.shape)
+print("\nOriginal dataset:")
+print(df.head())
 
 #------------------------------------------------------- Setup -------------------------------------------------------#
 
-target_df, targets = u2u.encode_target(df, "SECU_FLAG") # encoding dataframe with "SECU_FLAG" as classification target
-targets_dict = u2u.col_count_perc(df, "SECU_FLAG", len(df.index), 2) # count unique targets and calculate percentiles
-enc_df, repo_types = u2u.encode_string_column(target_df, "REPO_TYPE") # encoding the "REPO_TYPE" column
-repo_types_dict = u2u.col_count_perc(df, "REPO_TYPE", len(df.index), 3) # count repo types and calculate percentiles
+target_df, targets = u2u_p3.encode_target(df, "SECU_FLAG") # encoding dataframe with "SECU_FLAG" as classification target
+targets_dict = u2u_p3.col_count_perc(df, "SECU_FLAG", len(df.index), 2) # count unique targets and calculate percentiles
+enc_df, repo_types = u2u_p3.encode_string_column(target_df, "REPO_TYPE") # encoding the "REPO_TYPE" column
+repo_types_dict = u2u_p3.col_count_perc(df, "REPO_TYPE", len(df.index), 3) # count repo types and calculate percentiles
 
-print "Encoded Targets:"
+print("\nEncoded Targets:")
 for i in range(0, len(targets)):
-	print "\t", targets[i], "–> Encoded as:", str(i)+',',\
+	print("\t", targets[i], "–> Encoded as:", str(i)+',',\
 													"Count:", int(targets_dict[targets[i]][0]), "/ 300056,",\
-													"Percentile:", str(targets_dict[targets[i]][1]*100)+"%"
+													"Percentage:", str(targets_dict[targets[i]][1]*100)+"%")
 
-print "\nEncoded Repository Types: "
+print("\nEncoded Repository Types: ")
 for j in range(0, len(repo_types)):
-	print "\t", repo_types[j], "–> Encoded as:", str(j)+',',\
+	print("\t", repo_types[j], "–> Encoded as:", str(j)+',',\
 														 "Count:", int(repo_types_dict[repo_types[j]][0]), "/ 300056,",\
-														 "Percentile:", str(repo_types_dict[repo_types[j]][1]*100)+"%"
+														 "Percentage:", str(repo_types_dict[repo_types[j]][1]*100)+"%")
 	
 fold_count = 10 # number of folds for cross-validation
 secs_in_min = 60 # number of seconds in a minute
@@ -122,151 +124,151 @@ size_model_features = list(enc_df.columns[3:6]) # ADD_LOC, DEL_LOC, TOT_LOC
 time_model_features = list(enc_df.columns[8:9]) # PRIOR_AGE
 full_model_features = list(enc_df.columns[3:6]) + list(enc_df.columns[8:9]) + list(enc_df.columns[11:12]) # ADD_LOC, DEL_LOC, TOT_LOC, PRIOR_AGE, REPO_TYPE
 
-print "\n********************************************************* STARTING CLASSIFICATION *********************************************************"
+print("\n********************************************************* STARTING CLASSIFICATION *********************************************************")
 
 #-------------------------------------------- Decision Tree Classification -------------------------------------------#
 
-print "\nUsing Decision Tree Classification:\n"
+print("\nUsing Decision Tree Classification:\n")
 dtc = DecisionTreeClassifier(random_state=1) # define the decision tree classifier
 dtc_start = time.time()
 
 #-------------------- Type-Based Model -------------------#
 
-u2u.classification(dtc, type_model_features, enc_df, fold_count, "Type", targets)
+u2u_p3.classification(dtc, type_model_features, enc_df, fold_count, "Type", targets)
 
 #-------------------- Size-Based Model -------------------#
 
-u2u.classification(dtc, size_model_features, enc_df, fold_count, "Size", targets)
+u2u_p3.classification(dtc, size_model_features, enc_df, fold_count, "Size", targets)
 
 #-------------------- Time-Based Model -------------------#
 
-u2u.classification(dtc, time_model_features, enc_df, fold_count, "Time", targets)
+u2u_p3.classification(dtc, time_model_features, enc_df, fold_count, "Time", targets)
 
 #----------------------- Full Model ----------------------#
 
-u2u.classification(dtc, full_model_features, enc_df, fold_count, "Full", targets)
+u2u_p3.classification(dtc, full_model_features, enc_df, fold_count, "Full", targets)
 
 #---------------------- DTC Run Time ---------------------#
 
 dtc_end = time.time()
 dtc_run = (dtc_end - dtc_start)
 dtc_mins, dtc_secs = divmod(dtc_run, secs_in_min)
-print "\tThe decision tree classifier produced results for all 4 models in %0.2f minute(s) and %0.2f seconds." % (dtc_mins, dtc_secs), "\n"
+print("\tThe decision tree classifier produced results for all 4 models in %0.2f minute(s) and %0.2f seconds." % (dtc_mins, dtc_secs), "\n")
 
 #-------------------------------------------- Random Forest Classification -------------------------------------------#
 
-print "Using Random Forest Classification (with 50 trees):\n"
+print("Using Random Forest Classification (with 50 trees):\n")
 rfc = RandomForestClassifier(n_estimators=50, random_state=2) # define the random forest classifer
 rfc_start = time.time()
 
 #-------------------- Type-Based Model -------------------#
 
-u2u.classification(rfc, type_model_features, enc_df, fold_count, "Type", targets)
+u2u_p3.classification(rfc, type_model_features, enc_df, fold_count, "Type", targets)
 
 #-------------------- Size-Based Model -------------------#
 
-u2u.classification(rfc, size_model_features, enc_df, fold_count, "Size", targets)
+u2u_p3.classification(rfc, size_model_features, enc_df, fold_count, "Size", targets)
 
 #-------------------- Time-Based Model -------------------#
 
-u2u.classification(rfc, time_model_features, enc_df, fold_count, "Time", targets)
+u2u_p3.classification(rfc, time_model_features, enc_df, fold_count, "Time", targets)
 
 #----------------------- Full Model ----------------------#
 
-u2u.classification(rfc, full_model_features, enc_df, fold_count, "Full", targets)
+u2u_p3.classification(rfc, full_model_features, enc_df, fold_count, "Full", targets)
 
 #---------------------- RFC Run Time ---------------------#
 
 rfc_end = time.time()
 rfc_run = (rfc_end - rfc_start)
 rfc_mins, rfc_secs = divmod(rfc_run, secs_in_min)
-print "\tThe random forest classifier produced results for all 4 models in %0.2f minute(s) and %0.2f seconds." % (rfc_mins, rfc_secs), "\n"
+print("\tThe random forest classifier produced results for all 4 models in %0.2f minute(s) and %0.2f seconds." % (rfc_mins, rfc_secs), "\n")
 
 #------------------------------------------------- ANN Classification ------------------------------------------------#
 
-print "Using Artificial Neural Network Classification:\n"
+print("Using Artificial Neural Network Classification:\n")
 ann = MLPClassifier(random_state=3)
 ann_start = time.time()
 
 #-------------------- Type-Based Model -------------------#
 
-u2u.classification(ann, type_model_features, enc_df, fold_count, "Type", targets)
+u2u_p3.classification(ann, type_model_features, enc_df, fold_count, "Type", targets)
 
 #-------------------- Size-Based Model -------------------#
 
-u2u.classification(ann, size_model_features, enc_df, fold_count, "Size", targets)
+u2u_p3.classification(ann, size_model_features, enc_df, fold_count, "Size", targets)
 
 #-------------------- Time-Based Model -------------------#
 
-u2u.classification(ann, time_model_features, enc_df, fold_count, "Time", targets)
+u2u_p3.classification(ann, time_model_features, enc_df, fold_count, "Time", targets)
 
 #----------------------- Full Model ----------------------#
 
-u2u.classification(ann, full_model_features, enc_df, fold_count, "Full", targets)
+u2u_p3.classification(ann, full_model_features, enc_df, fold_count, "Full", targets)
 
 #---------------------- ANN Run Time ---------------------#
 
 ann_end = time.time()
 ann_run = (ann_end - ann_start)
 ann_mins, ann_secs = divmod(ann_run, secs_in_min)
-print "\tThe artificial neural network classifier produced results for all 4 models in %0.2f minute(s) and %0.2f seconds." % (ann_mins, ann_secs), "\n"
+print("\tThe artificial neural network classifier produced results for all 4 models in %0.2f minute(s) and %0.2f seconds." % (ann_mins, ann_secs), "\n")
 
 #------------------------------------------------- kNN Classification ------------------------------------------------#
 
-print "Using k Nearest Neighbor Classification (with 3 neighbors threshold):\n"
+print("Using k Nearest Neighbor Classification (with 3 neighbors threshold):\n")
 knn = KNeighborsClassifier(n_neighbors=3) # define the k nearest neighbor classifier
 knn_start = time.time()
 
 #-------------------- Type-Based Model -------------------#
 
-u2u.classification(knn, type_model_features, enc_df, fold_count, "Type", targets)
+u2u_p3.classification(knn, type_model_features, enc_df, fold_count, "Type", targets)
 
 #-------------------- Size-Based Model -------------------#
 
-u2u.classification(knn, size_model_features, enc_df, fold_count, "Size", targets)
+u2u_p3.classification(knn, size_model_features, enc_df, fold_count, "Size", targets)
 
 #-------------------- Time-Based Model -------------------#
 
-u2u.classification(knn, time_model_features, enc_df, fold_count, "Time", targets)
+u2u_p3.classification(knn, time_model_features, enc_df, fold_count, "Time", targets)
 
 #----------------------- Full Model ----------------------#
 
-u2u.classification(knn, full_model_features, enc_df, fold_count, "Full", targets)
+u2u_p3.classification(knn, full_model_features, enc_df, fold_count, "Full", targets)
 
 #---------------------- kNN Run Time ---------------------#
 
 knn_end = time.time()
 knn_run = (knn_end - knn_start)
 knn_mins, knn_secs = divmod(knn_run, secs_in_min)
-print "\tThe k nearest neighbor classifier produced results for all 4 models in %0.2f minute(s) and %0.2f seconds." % (knn_mins, knn_secs), "\n"
+print("\tThe k nearest neighbor classifier produced results for all 4 models in %0.2f minute(s) and %0.2f seconds." % (knn_mins, knn_secs), "\n")
 
 #--------------------------------------------- Naïve Bayes Classification -------------------------------------------#
 
-print "Using Naïve Bayes Classification (Gaussian):\n"
+print("Using Naïve Bayes Classification (Gaussian):\n")
 nbc = GaussianNB() # define the naïve bayes classifier using the gaussian algorithm
 nbc_start = time.time()
 
 #-------------------- Type-Based Model -------------------#
 
-u2u.classification(nbc, type_model_features, enc_df, fold_count, "Type", targets)
+u2u_p3.classification(nbc, type_model_features, enc_df, fold_count, "Type", targets)
 
 #-------------------- Size-Based Model -------------------#
 
-u2u.classification(nbc, size_model_features, enc_df, fold_count, "Size", targets)
+u2u_p3.classification(nbc, size_model_features, enc_df, fold_count, "Size", targets)
 
 #-------------------- Time-Based Model -------------------#
 
-u2u.classification(nbc, time_model_features, enc_df, fold_count, "Time", targets)
+u2u_p3.classification(nbc, time_model_features, enc_df, fold_count, "Time", targets)
 
 #----------------------- Full Model ----------------------#
 
-u2u.classification(nbc, full_model_features, enc_df, fold_count, "Full", targets)
+u2u_p3.classification(nbc, full_model_features, enc_df, fold_count, "Full", targets)
 
 #---------------------- NBC Run Time ---------------------#
 
 nbc_end = time.time()
 nbc_run = (nbc_end - nbc_start)
 nbc_mins, nbc_secs = divmod(nbc_run, secs_in_min)
-print "\tThe naïve bayes classifier produced results for all 4 models in %0.2f minute(s) and %0.2f seconds." % (nbc_mins, nbc_secs), "\n"
+print("\tThe naïve bayes classifier produced results for all 4 models in %0.2f minute(s) and %0.2f seconds." % (nbc_mins, nbc_secs), "\n")
 
 #-------------------------------------------------- END OF SCRIPT ----------------------------------------------------#

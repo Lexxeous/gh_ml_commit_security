@@ -1,14 +1,15 @@
 log_file ?= "update_2_log.out"
-src_pyc ?= update_2_main.pyc
+src_pyc2 ?= update_2_main_p2.pyc
+src_pyc3 ?= update_2_main_p3.pyc
 
-run:
-	python update_2_main.py $(log_file)
+run2:
+	python update_2_main_p2.py $(log_file)
 
-run_3:
-	python3 update_2_main.py $(log_file)
+run3:
+	python3 update_2_main_p3.py $(log_file)
 
 clean:
-	rm $(log_file) $(src_pyc)
+	rm $(log_file) $(src_pyc2) $(src_pyc3)
 
 clean_utils:
 	cd ../utilities && rm *.pyc

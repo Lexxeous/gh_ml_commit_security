@@ -2,7 +2,7 @@
 # coding: utf-8
 
 """
-Title: update_1_main.py
+Title: update_1_main_p3.py
 Author(s): Jonathan A. Gibson, Andrew P. Worley, Raunak Shakya
 Objectives:
   1. Filter out noisy file names; filenames MUST have extentions and MAY have a path.
@@ -35,7 +35,7 @@ print("The command line argument(s) are:", str(sys.argv))
 
 if(len(sys.argv) != 2):
   print("ERROR::160::BAD_ARGUMENTS")
-  print("Run program with the following format: \'python update_1_main.py \"<log_file>\"\'; alternatively use \'make run2\' or \'make run3\' for Python2 and Python3 appropriate scripts respectively.\n")
+  print("Run program with the following format: \'python update_1_main_p#.py \"<log_file>\"\'; alternatively use \'make run2\' or \'make run3\' for Python2 and Python3 appropriate scripts respectively.\n")
   sys.exit()
 
 #------------------------------------------------- Load Dataset File -------------------------------------------------#

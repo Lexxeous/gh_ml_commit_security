@@ -13,9 +13,9 @@ Jonathan A. Gibson, Andrew P. Worley, Raunak Shakya
   6. Look at the obtained features manually and see what features appear.
 
 ### Instructions
-You can run the program with **Python2** by using `make run2` or with **Python3** using `make run3`. If you run into an issue with running the program locally with **Python3**, you may be able to solve the problem in two different ways.
-
 You will need to download the `update_1_dataset.csv` file from my public Google Drive directory. It is approximately 1.1GB in size and will need to be places in the `update_1/` directory of this project. You can download the file here: https://drive.google.com/open?id=1YOchYsdFg_12fMIIlpDJ-BfzNWJ58tAA.
+
+You can run the program with **Python2** by using `make run2` or with **Python3** using `make run3`. If you run into an issue with running the program locally with **Python3**, you may be able to solve the problem in two different ways.
 
 #### Fix 1
 First, you could create a virtual environment by using the following steps:
