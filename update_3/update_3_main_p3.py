@@ -1,8 +1,8 @@
-#!/usr/bin/env Python
+#!/usr/local/bin/python3
 # coding: utf-8
 
 '''
-Filename: update_3_main.py
+Filename: update_3_main_p3.py
 Authors: Jonathan A. Gibson, Andrew P. Worley, & Raunak S. Hakya
 Objectives:
 	Phase 0:
@@ -11,7 +11,6 @@ Objectives:
 			"OTHERS" will include "ComputationalScience" & "ComputationalIntelligence".
 		Item 1:
 			For each dataset (partitioned dataframe), use Mann Whitney U Tests and Cliff's Effect Size to find differences between "INSECURE" & "NEUTRAL" "SECU_FLAG" labels.
-			Helper scripts in Google Drive folder.
 	Phase 1:
 		Item 2:
 			Apply full model: (ADD_LOC, DEL_LOC, TOT_LOC,DEV_EXP, DEV_RECENT, PRIOR_AGE, CHANGE_FILE_CNT).
@@ -31,7 +30,7 @@ Objectives:
 		Item 5:
 			Report confusion matrix, precision, recall, and F-measure for Item 2, Item 3, and Item 4.
 			Report on Items 3 & 4 should be a "before and after" result based on the lack and use of SMOTE sampling respectively.
-	Phase 3 (Optional):
+	Phase 3:
 		Item 6:
 			Run security static analysis tool on code to find security weaknesses.
 			Use "Bandit" library to report severity.
@@ -55,6 +54,7 @@ Notes:
 
 	Cross Validation Reference(s):
 		https://scikit-learn.org/stable/modules/cross_validation.html
+		https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_validate.html
 		https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.cross_val_score.html
 
 	F-Score Reference(s):
@@ -102,45 +102,45 @@ import sys # for managing command line arguments
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "utilities")) # add "../utilities" to module import search path
 import logger # for custom "Logger" class
-import update_3_utils as u3u # for custom "update_3_utils" utility functions
+import update_3_utils_p3 as u3u_p3 # for custom "update_3_utils" utility functions
 
 #-------------------------------------------- Check Command Line Arguments --------------------------------------------#
 
-print "\nProgram Name: ", sys.argv[0]
-print "Number of command line arguments: ", len(sys.argv)
-print "The command line argument(s) are: " , str(sys.argv), "\n"
+print("\nProgram Name: ", sys.argv[0])
+print("Number of command line arguments:", len(sys.argv))
+print("The command line argument(s) are:" , str(sys.argv), "\n")
 
 if(len(sys.argv) != 2):
-	print "ERROR::160::BAD_ARGUMENTS"
-	print "Run program with the following format: \'Python update_3_main.py \"<log_file>\"\' or use \'make run\'.\n"
+	print("ERROR::160::BAD_ARGUMENTS")
+	print("Run program with the following format: \'python update_3_main_p#.py \"<log_file>\"\'; alternatively use \'make run2\' or \'make run3\' for Python2 and Python3 appropriate scripts respectively.\n")
 	sys.exit()
 
 #------------------------------------------------- Load Dataset File -------------------------------------------------#
 
-valid_dataset_names = ["ProjectUpdate2-Dataset.csv", "dataset.csv", "Dataset.csv", "DATASET.csv", "test.csv"]
+valid_dataset_names = ["update_3_dataset.csv", "dataset.csv", "Dataset.csv", "DATASET.csv", "test.csv"]
 
 for d in valid_dataset_names:
 	if(os.path.exists(d)):
-		print"Loading dataset file..."
+		print("Loading dataset file...")
 		df = pd.read_csv(d)
-		print "Done.\n"
+		print("Done.\n")
 		break
 	else:
-		print "ERROR::002::FILE_NOT_FOUND"
-		print "Place project dataset file in root directory with one of the following valid dataset file names:\n", valid_dataset_names, "\n"
+		print("ERROR::002::FILE_NOT_FOUND")
+		print("Place project dataset file in root directory with one of the following valid dataset file names:\n", valid_dataset_names, "\n")
 		sys.exit()
 
 #------------------------------------------------------- Setup -------------------------------------------------------#
 
-skip = False # option to skip larger datasets for faster testing/debgging
+skip = True # option to skip larger datasets for faster testing/debgging
 
 dnn_epochs = 50
 dnn_batch_sz = 10
 fit_verbose = 2 # 0 for silent, 1 for full, 2 for minimal
 pred_verbose = 0 # 0 for silent, 1 for full
 
-target_df, targets = u3u.encode_target(df, "SECU_FLAG") # encoding dataframe with "SECU_FLAG" as classification target
-targets_dict = u3u.col_count_perc(target_df, "SECU_FLAG", len(df.index), 2) # count unique targets and calculate percentiles
+target_df, targets = u3u_p3.encode_target(df, "SECU_FLAG") # encoding dataframe with "SECU_FLAG" as classification target
+targets_dict = u3u_p3.col_count_perc(target_df, "SECU_FLAG", len(df.index), 2) # count unique targets and calculate percentiles
 
 full_model_features = list(target_df.columns[3:10]) # ADD_LOC, DEL_LOC, TOT_LOC, DEV_EXP, DEV_RECENT, PRIOR_AGE, CHANGE_FILE_CNT
 single_type_groups = ["ComputationalChemistry", "Astronomy", "ComputationalBiology"] # array for only single repository type dataset groups
@@ -174,31 +174,34 @@ model.add(Dense(1, activation="sigmoid")) # prediction output layer
 # Compile the Keras model
 model.compile(optimizer="adam", loss="binary_crossentropy", metrics=["acc"])
 
-print "\nEncoded Targets for Entire Dataset:"
+print("\nEncoded Targets for Entire Dataset:")
 for i in range(len(targets)): # print "NEUTRAL" and "INSECURE" statistics for the entire dataset
-	print "\t", targets[i], "–> Encoded as:", str(i)+',',\
+	print("\t", targets[i], "–> Encoded as:", str(i)+',',\
 													"Count:", int(targets_dict[i][0]), "/ 300056,",\
-													"Percentile:", str(targets_dict[i][1]*100)+"%"
+													"Percentage:", str(targets_dict[i][1]*100)+"%")
 
 #--------------------------------------- Spilt Dataset into Partitioned Groups ---------------------------------------#
 
-datasets = u3u.partition_df_repo_type_groups(target_df, single_type_groups) # [chemistry_df, astronomy_df, biology_df, others_df]
+datasets = u3u_p3.partition_df_repo_type_groups(target_df, single_type_groups) # [chemistry_df, astronomy_df, biology_df, others_df]
 
 # Loop through all 4 of the partitioned dataset groups
 for i in range(N): # N = 4
-	dataset_dict = u3u.col_count_perc(datasets[i], "SECU_FLAG", len(datasets[i].index), 2) # calculate percentitles for partitioned dataframes
-	print "\nEncoded Targets for Original " + all_groups[i] + " Dataset:"
+	dataset_dict = u3u_p3.col_count_perc(datasets[i], "SECU_FLAG", len(datasets[i].index), 2) # calculate percentitles for partitioned dataframes
+	print("\nEncoded Targets for Original " + all_groups[i] + " Dataset:")
 	for j in range(len(targets)): # print "NEUTRAL" and "INSECURE" statistics for each partitioned dataset group
-		print "\t", targets[j], "–> Encoded as:", str(j)+',',\
+		print("\t", targets[j], "–> Encoded as:", str(j)+',',\
 														"Count:", int(dataset_dict[j][0]), "/", str(len(datasets[i].index))+',',\
-														"Percentile:", str(dataset_dict[j][1]*100)+"%"
+														"Percentage:", str(dataset_dict[j][1]*100)+"%")
 
 #--------------------------------- Apply Mann Whitney U Tests and Cliff's Effect Size --------------------------------#
 
 # Loop through all 4 of the partitioned dataset groups
 for g in range(len(datasets)):
 	
-	u3u.print_parent_divider("effect", g, all_groups) # formatting printed output
+	u3u_p3.print_parent_divider("effect", g, all_groups) # formatting printed output
+
+	if(skip):
+		if(g in [1,2,3]): continue
 
 	# Loop through all 6 of the features in the full model
 	for f in range(len(full_model_features)):
@@ -214,12 +217,12 @@ for g in range(len(datasets)):
 			else:
 				group_feat_i_list.append(row[full_model_features[f]])
 
-		print "\nComparing \"NEUTRAL\" and \"INSECURE\" lists, using the " + all_groups[g] + " dataset, for the \"" + full_model_features[f] + "\" feature:"
-		u3u.compare_lists(group_feat_n_list, group_feat_i_list, u3u.CD_LRG_DIFF)
+		print("\nComparing \"NEUTRAL\" and \"INSECURE\" lists, using the " + all_groups[g] + " dataset, for the \"" + full_model_features[f] + "\" feature:")
+		u3u_p3.compare_lists(group_feat_n_list, group_feat_i_list, u3u_p3.CD_LRG_DIFF)
 
 #---------------------------------- Train/Build Full Model for Each Original Dataset ---------------------------------#
 
-u3u.print_parent_divider("fit") # formatting printed output
+u3u_p3.print_parent_divider("fit") # formatting printed output
 
 # Loop through dataset groupings
 for i in range(N): # N = 4
@@ -227,7 +230,7 @@ for i in range(N): # N = 4
 
 	subset_data_X = datasets[i][full_model_features]
 	class_labels_Y = datasets[i]["SECU_FLAG"]
-	print "\n"
+	print("\n")
 
 	# Loop through classification models
 	for j in range(M): # M = 5
@@ -235,14 +238,14 @@ for i in range(N): # N = 4
 		model_list[j] = classifiers[j]
 		model_list[j].fit(subset_data_X, class_labels_Y)
 		org_model_set_matrix[i][j] = model_list[j]
-		print "Finished building \"" + model_classifiers[j] + "\" classifier model for original \"" + all_groups[i] + "\" dataset."
+		print("Finished building \"" + model_classifiers[j] + "\" classifier model for original \"" + all_groups[i] + "\" dataset.")
 
 #---------------------- Test Each Original Dataset Against Others (12 Pairs Per Classifier Model) --------------------#
 
 # Loop through dataset groupings (hosts)
 for i in range(N): # N = 4
 
-	u3u.print_parent_divider("prior", i, all_groups) # formatting printed output
+	u3u_p3.print_parent_divider("prior", i, all_groups) # formatting printed output
 
 	# Loop through dataset groupings again (guests)
 	for j in range(N): # N = 4
@@ -253,30 +256,30 @@ for i in range(N): # N = 4
 
 		# Loop through prior classifier models
 		for k in range(M): # M = 5
-			u3u.print_child_divider(model_classifiers[k]) # formatting printed output
+			u3u_p3.print_child_divider(model_classifiers[k]) # formatting printed output
 			prediction = org_model_set_matrix[i][k].predict(test_set)
 		  
 		  # Skipping datasets for testing purposes
 			if(skip):
 				if(k in [1,2,3]): continue
 
-			host, guest = u3u.set_host_and_guest(i, j, single_type_groups) # set proper host and guest
+			host, guest = u3u_p3.set_host_and_guest(i, j, single_type_groups) # set proper host and guest
 
 			#------------------------------------ Results with Prior Learners (BEFORE) -------------------------------------#
 
-			print "Results for \"" + model_classifiers[k] + "\" trained on original \"" + host + "\" dataset tested with original \"" + guest + "\" dataset:"
-			print metric.classification_report(actual, prediction, target_names=targets)
-			print "Confusion Matrix:"
-			print metric.confusion_matrix(actual, prediction)
+			print("Results for \"" + model_classifiers[k] + "\" trained on original \"" + host + "\" dataset tested with original \"" + guest + "\" dataset:")
+			print(metric.classification_report(actual, prediction, target_names=targets))
+			print("Confusion Matrix:")
+			print(metric.confusion_matrix(actual, prediction))
 
 #-------------------------------------- Results with DNN for Original Datasets ---------------------------------------#
 
-print "\nUsing", dnn_epochs, "epoch(s) and a batch size of", str(dnn_batch_sz) + "..."
+print("\nUsing", dnn_epochs, "epoch(s) and a batch size of", str(dnn_batch_sz) + "...")
 
 # Loop through dataset groupings (hosts)
 for i in range(N): # N = 4
 	
-	u3u.print_parent_divider("dnn", i, all_groups) # formatting printed output
+	u3u_p3.print_parent_divider("dnn", i, all_groups) # formatting printed output
 
 	# Skipping datasets for testing purposes
 	if(skip):
@@ -289,37 +292,37 @@ for i in range(N): # N = 4
 	for j in range(N): # N = 4
 		if(i == j): continue # dataset group shouldn't compare against itself
 	
-		host, guest = u3u.set_host_and_guest(i, j, single_type_groups)
+		host, guest = u3u_p3.set_host_and_guest(i, j, single_type_groups)
 
 		# Test the fit Keras DNN model with other the other datasets
 		pred_mat = model.predict(datasets[j][full_model_features], verbose=pred_verbose)
 		ground_truth = datasets[j]["SECU_FLAG"]
-		acc, prec, rec, fscore = u3u.get_dnn_pred_metrics(ground_truth, pred_mat)
-		true_arr, pred_arr = u3u.process_dfcol_and_mat(ground_truth, pred_mat)
+		acc, prec, rec, fscore = u3u_p3.get_dnn_pred_metrics(ground_truth, pred_mat)
+		true_arr, pred_arr = u3u_p3.process_dfcol_and_mat(ground_truth, pred_mat)
 
-		print "\nResults for Deep Neural Network trained on original \"" + host + "\" dataset tested with original \"" + guest + "\" dataset:"
-		print "\tAccuracy: " + str(round(acc*100, 2)) + "%, Precision: " + str(prec) + ", Recall: " + str(rec) + ", F-Score: " + str(fscore)
-		print "\tConfusion Matrix:"
-		print metric.confusion_matrix(true_arr, pred_arr)
+		print("\nResults for Deep Neural Network trained on original \"" + host + "\" dataset tested with original \"" + guest + "\" dataset:")
+		print("\tAccuracy: " + str(round(acc*100, 2)) + "%, Precision: " + str(prec) + ", Recall: " + str(rec) + ", F-Score: " + str(fscore))
+		print("\tConfusion Matrix:")
+		print(metric.confusion_matrix(true_arr, pred_arr))
 
 #----------------------------------------------- Resampling with SMOTE -----------------------------------------------#
 
 resampled_datasets = [None]*len(datasets)
 for d in range(len(datasets)):
-	resampled_datasets[d] = u3u.resample_dataset(datasets[d], full_model_features, all_groups[d])
+	resampled_datasets[d] = u3u_p3.resample_dataset(datasets[d], full_model_features, all_groups[d])
 
 # Loop through all 4 of the resampled, partitioned dataset groups
 for i in range(N): # N = 4
-	resampled_dataset_dict = u3u.col_count_perc(resampled_datasets[i], "SECU_FLAG", len(resampled_datasets[i].index), 2) # calculate percentitles for resampled dataframes
-	print "\nEncoded Targets for Resampled " + all_groups[i] + " Dataset:"
+	resampled_dataset_dict = u3u_p3.col_count_perc(resampled_datasets[i], "SECU_FLAG", len(resampled_datasets[i].index), 2) # calculate percentitles for resampled dataframes
+	print("\nEncoded Targets for Resampled " + all_groups[i] + " Dataset:")
 	for j in range(len(targets)): # print "NEUTRAL" and "INSECURE" statistics for each partitioned dataset group
-		print "\t", targets[j], "–> Encoded as:", str(j)+',',\
+		print("\t", targets[j], "–> Encoded as:", str(j)+',',\
 														"Count:", int(resampled_dataset_dict[j][0]), "/", str(len(resampled_datasets[i].index))+',',\
-														"Percentile:", str(resampled_dataset_dict[j][1]*100)+"%"
+														"Percentage:", str(resampled_dataset_dict[j][1]*100)+"%")
 
 #--------------------------------- Train/Build Full Model for Each Resampled Dataset  --------------------------------#
 
-u3u.print_parent_divider("fit") # formatting printed output
+u3u_p3.print_parent_divider("fit") # formatting printed output
 
 # Loop through dataset groupings
 for i in range(N): # N = 4
@@ -327,7 +330,7 @@ for i in range(N): # N = 4
 
 	subset_data_X = resampled_datasets[i][full_model_features]
 	class_labels_Y = resampled_datasets[i]["SECU_FLAG"]
-	print "\n"
+	print("\n")
 
 	# Loop through classification models
 	for j in range(M): # M = 5
@@ -335,14 +338,14 @@ for i in range(N): # N = 4
 		model_list[j] = classifiers[j]
 		model_list[j].fit(subset_data_X, class_labels_Y)
 		res_model_set_matrix[i][j] = model_list[j]
-		print "Finished building \"" + model_classifiers[j] + "\" classifier model for resampled \"" + all_groups[i] + "\" dataset."
+		print("Finished building \"" + model_classifiers[j] + "\" classifier model for resampled \"" + all_groups[i] + "\" dataset.")
 
 #--------------------- Test Each Resampled Dataset Against Others (12 Pairs Per Classifier Model) --------------------#
 
 # Loop through dataset groupings (hosts)
 for i in range(N): # N = 4
 
-	u3u.print_parent_divider("prior", i, all_groups) # formatting printed output
+	u3u_p3.print_parent_divider("prior", i, all_groups) # formatting printed output
 
 	# Loop through dataset groupings again (guests)
 	for j in range(N): # N = 4
@@ -353,30 +356,30 @@ for i in range(N): # N = 4
 
 		# Loop through prior classifier models
 		for k in range(M): # M = 5
-			u3u.print_child_divider(model_classifiers[k]) # formatting printed output
+			u3u_p3.print_child_divider(model_classifiers[k]) # formatting printed output
 			prediction = res_model_set_matrix[i][k].predict(test_set)
 		  
 		  # Skipping datasets for testing purposes
 			if(skip):
 				if(k in [1,2,3]): continue
 
-			host, guest = u3u.set_host_and_guest(i, j, single_type_groups) # set proper host and guest
+			host, guest = u3u_p3.set_host_and_guest(i, j, single_type_groups) # set proper host and guest
 
 			#------------------------------------- Results with Prior Learners (AFTER) -------------------------------------#
 
-			print "Results for \"" + model_classifiers[k] + "\" trained on resampled \"" + host + "\" dataset, tested with resampled \"" + guest + "\" dataset:"
-			print metric.classification_report(actual, prediction, target_names=targets)
-			print "Confusion Matrix:"
-			print metric.confusion_matrix(actual, prediction)
+			print("Results for \"" + model_classifiers[k] + "\" trained on resampled \"" + host + "\" dataset, tested with resampled \"" + guest + "\" dataset:")
+			print(metric.classification_report(actual, prediction, target_names=targets))
+			print("Confusion Matrix:")
+			print(metric.confusion_matrix(actual, prediction))
 
 #-------------------------------------- Results with DNN for Resampled Datasets --------------------------------------#
 
-print "\nUsing", dnn_epochs, "epoch(s) and a batch size of", str(dnn_batch_sz) + "..."
+print("\nUsing", dnn_epochs, "epoch(s) and a batch size of", str(dnn_batch_sz) + "...")
 
 # Loop through dataset groupings (hosts)
 for i in range(N): # N = 4
 	
-	u3u.print_parent_divider("dnn", i, all_groups) # formatting printed output
+	u3u_p3.print_parent_divider("dnn", i, all_groups) # formatting printed output
 
 	# Skipping datasets for testing purposes
 	if(skip):
@@ -389,18 +392,17 @@ for i in range(N): # N = 4
 	for j in range(N): # N = 4
 		if(i == j): continue # dataset group shouldn't compare against itself
 	
-		host, guest = u3u.set_host_and_guest(i, j, single_type_groups)
+		host, guest = u3u_p3.set_host_and_guest(i, j, single_type_groups)
 
 		# Test the fit Keras DNN model with other the other datasets
 		pred_mat = model.predict(resampled_datasets[j][full_model_features], verbose=pred_verbose)
 		ground_truth = resampled_datasets[j]["SECU_FLAG"]
-		acc, prec, rec, fscore = u3u.get_dnn_pred_metrics(ground_truth, pred_mat)
-		true_arr, pred_arr = u3u.process_dfcol_and_mat(ground_truth, pred_mat)
+		acc, prec, rec, fscore = u3u_p3.get_dnn_pred_metrics(ground_truth, pred_mat)
+		true_arr, pred_arr = u3u_p3.process_dfcol_and_mat(ground_truth, pred_mat)
 
-		print "\nResults for Deep Neural Network trained on resampled \"" + host + "\" dataset tested with resampled \"" + guest + "\" dataset:"
-		print "\tAccuracy: " + str(round(acc*100, 2)) + "%, Precision: " + str(prec) + ", Recall: " + str(rec) + ", F-Score: " + str(fscore)
-		print "\tConfusion Matrix:"
-		print metric.confusion_matrix(true_arr, pred_arr)
+		print("\nResults for Deep Neural Network trained on resampled \"" + host + "\" dataset tested with resampled \"" + guest + "\" dataset:")
+		print("\tAccuracy: " + str(round(acc*100, 2)) + "%, Precision: " + str(prec) + ", Recall: " + str(rec) + ", F-Score: " + str(fscore))
+		print("\tConfusion Matrix:")
+		print(metric.confusion_matrix(true_arr, pred_arr))
 
-#---------------------------------------------------------------------------------------------------------------------#
-
+#-------------------------------------------------- END OF SCRIPT ----------------------------------------------------#
