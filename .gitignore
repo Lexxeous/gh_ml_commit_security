@@ -1,0 +1,60 @@
+#------------------------------------------- Update 1 --------------------------------------------#
+
+# Dataset files
+update_1/LOCKED_FINAL_CSC4220_5220_DATASET.csv
+update_1/dataset.csv
+update_1/Dataset.csv
+update_1/DATASET.csv
+update_1/test.csv
+
+# Virtual Python environment
+update_1/proj
+update_1/__pycache__
+
+# Output files
+update_1/update_1_log.out
+update_1/insecure_hash_files.csv
+update_1/insecure_top_features.csv
+update_1/neutral_hash_files.csv
+update_1/neutral_top_features.csv
+update_1/validated_file_names.csv
+
+# Compiled source files
+update_1/*.pyc
+
+# Misc files
+update_1/test.py
+update_1/Notes.txt
+update_1/testing_push.txt
+
+#------------------------------------------- Update 2 --------------------------------------------#
+
+# Dataset files
+
+# Virtual Python environment
+
+# Output files
+update_2/update_2_log.out
+
+# Compiled source files
+update_2/*.pyc
+
+# Misc files
+
+#------------------------------------------- Update 2 --------------------------------------------#
+
+# Dataset files
+
+# Virtual Python environment
+
+# Output files
+update_3/update_3_log.out
+
+# Compiled source files
+update_3/*.pyc
+
+# Misc files
+
+#------------------------------------------- Utilities -------------------------------------------#
+
+utilities/*.pyc

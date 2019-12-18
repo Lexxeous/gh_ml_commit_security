@@ -1,0 +1,3048 @@
+
+Program Name:  update_3_main.py
+Number of command line arguments:  2
+The command line argument(s) are:  ['update_3_main.py', 'update_3_log.out'] 
+
+Loading dataset file...
+Done.
+
+Dataset after encoding the target column: 
+       REPO                                      HASH                 TIME  ADD_LOC  DEL_LOC  TOT_LOC  DEV_EXP  DEV_RECENT  PRIOR_AGE  CHANGE_FILE_CNT  SECU_FLAG               REPO_TYPE
+0  3Dmol.js  685a3a48739eaa32d0ae9222189f156fb74ba53f  2019-08-27T16-28-00      106       51      157      856   273.50952       2539                5          0  ComputationalChemistry
+1  3Dmol.js  8c6de1adb30b1da959844b3c10389939dbd2d9cc  2019-08-26T17-16-29       61        3       64       22    22.00000       2538                3          0  ComputationalChemistry
+2  3Dmol.js  bebc9d00c10b5ad89526e7375f89ef48906f6d99  2019-08-26T14-26-37       48       51       99       22    22.00000       2538                4          0  ComputationalChemistry
+3  3Dmol.js  80ec97fa9ecbf029f1045bbf1dc112156855277d  2019-08-25T09-22-19    21224       10    21234      856   273.50952       2536                5          0  ComputationalChemistry
+4  3Dmol.js  bc2a6a74c997abfe526a75186b2f08aef4f2fd67  2019-08-25T15-10-19    21224       10    21234       22    22.00000       2537                5          0  ComputationalChemistry 
+
+
+Encoded Targets for Entire Dataset:
+	NEUTRAL –> Encoded as: 0, Count: 276260 / 300056, Percentile: 92.0%
+	INSECURE –> Encoded as: 1, Count: 23796 / 300056, Percentile: 8.0%
+
+Encoded Targets for Original ComputationalChemistry Dataset:
+	NEUTRAL –> Encoded as: 0, Count: 49397 / 52395, Percentile: 94.0%
+	INSECURE –> Encoded as: 1, Count: 2998 / 52395, Percentile: 6.0%
+
+Encoded Targets for Original Astronomy Dataset:
+	NEUTRAL –> Encoded as: 0, Count: 62496 / 67344, Percentile: 93.0%
+	INSECURE –> Encoded as: 1, Count: 4848 / 67344, Percentile: 7.0%
+
+Encoded Targets for Original ComputationalBiology Dataset:
+	NEUTRAL –> Encoded as: 0, Count: 159216 / 174933, Percentile: 91.0%
+	INSECURE –> Encoded as: 1, Count: 15717 / 174933, Percentile: 9.0%
+
+Encoded Targets for Original Others Dataset:
+	NEUTRAL –> Encoded as: 0, Count: 5151 / 5384, Percentile: 96.0%
+	INSECURE –> Encoded as: 1, Count: 233 / 5384, Percentile: 4.0%
+
+====================================================== Comparing ComputationalChemistry Features =======================================================
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the ComputationalChemistry dataset, for the "ADD_LOC" feature:
+	Neutral values (MEDIAN): 28.0, (MEAN): 1583.15677118, (COUNT): 2998
+	Insecure values (MEDIAN): 16.0, (MEAN): 2285.53236026, (COUNT): 49397
+	Test Statistic: 65553024.5, P-Value: 1.0, Cliff's Effect Size: (False, 0.115)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the ComputationalChemistry dataset, for the "DEL_LOC" feature:
+	Neutral values (MEDIAN): 6.0, (MEAN): 897.772848566, (COUNT): 2998
+	Insecure values (MEDIAN): 5.0, (MEAN): 1412.41374982, (COUNT): 49397
+	Test Statistic: 69231238.5, P-Value: 0.99999999906, Cliff's Effect Size: (False, 0.065)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the ComputationalChemistry dataset, for the "TOT_LOC" feature:
+	Neutral values (MEDIAN): 44.0, (MEAN): 2480.92961975, (COUNT): 2998
+	Insecure values (MEDIAN): 26.0, (MEAN): 3697.94611009, (COUNT): 49397
+	Test Statistic: 66765226.5, P-Value: 1.0, Cliff's Effect Size: (False, 0.098)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the ComputationalChemistry dataset, for the "DEV_EXP" feature:
+	Neutral values (MEDIAN): 897.0, (MEAN): 1088.81220814, (COUNT): 2998
+	Insecure values (MEDIAN): 908.0, (MEAN): 1336.46731583, (COUNT): 49397
+	Test Statistic: 78926383.5, P-Value: 6.27832375973e-10, Cliff's Effect Size: (False, 0.066)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the ComputationalChemistry dataset, for the "DEV_RECENT" feature:
+	Neutral values (MEDIAN): 226.35476, (MEAN): 229.051662872, (COUNT): 2998
+	Insecure values (MEDIAN): 200.50238, (MEAN): 256.882827773, (COUNT): 49397
+	Test Statistic: 76207150.0, P-Value: 0.00358136401035, Cliff's Effect Size: (False, 0.029)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the ComputationalChemistry dataset, for the "PRIOR_AGE" feature:
+	Neutral values (MEDIAN): 2930.5, (MEAN): 3284.82988659, (COUNT): 2998
+	Insecure values (MEDIAN): 2950.0, (MEAN): 3428.89932587, (COUNT): 49397
+	Test Statistic: 75528472.5, P-Value: 0.0326315215337, Cliff's Effect Size: (False, 0.02)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the ComputationalChemistry dataset, for the "CHANGE_FILE_CNT" feature:
+	Neutral values (MEDIAN): 2.0, (MEAN): 15.3098732488, (COUNT): 2998
+	Insecure values (MEDIAN): 1.0, (MEAN): 12.1047027147, (COUNT): 49397
+	Test Statistic: 70437308.0, P-Value: 0.999999339528, Cliff's Effect Size: (False, 0.049)
+
+============================================================= Comparing Astronomy Features =============================================================
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the Astronomy dataset, for the "ADD_LOC" feature:
+	Neutral values (MEDIAN): 14.0, (MEAN): 146.26299505, (COUNT): 4848
+	Insecure values (MEDIAN): 11.0, (MEAN): 307.921674987, (COUNT): 62496
+	Test Statistic: 140927246.5, P-Value: 1.0, Cliff's Effect Size: (False, 0.07)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the Astronomy dataset, for the "DEL_LOC" feature:
+	Neutral values (MEDIAN): 5.0, (MEAN): 64.5039191419, (COUNT): 4848
+	Insecure values (MEDIAN): 4.0, (MEAN): 227.367367512, (COUNT): 62496
+	Test Statistic: 146386033.5, P-Value: 0.999958034996, Cliff's Effect Size: (False, 0.034)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the Astronomy dataset, for the "TOT_LOC" feature:
+	Neutral values (MEDIAN): 22.0, (MEAN): 210.766914191, (COUNT): 4848
+	Insecure values (MEDIAN): 19.0, (MEAN): 535.289042499, (COUNT): 62496
+	Test Statistic: 144054044.5, P-Value: 0.999999994277, Cliff's Effect Size: (False, 0.049)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the Astronomy dataset, for the "DEV_EXP" feature:
+	Neutral values (MEDIAN): 794.0, (MEAN): 1221.64851485, (COUNT): 4848
+	Insecure values (MEDIAN): 801.0, (MEAN): 1287.3796403, (COUNT): 62496
+	Test Statistic: 158678215.5, P-Value: 1.75143581496e-08, Cliff's Effect Size: (False, 0.047)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the Astronomy dataset, for the "DEV_RECENT" feature:
+	Neutral values (MEDIAN): 253.1369, (MEAN): 378.274657671, (COUNT): 4848
+	Insecure values (MEDIAN): 272.16667, (MEAN): 419.508193045, (COUNT): 62496
+	Test Statistic: 161971500.5, P-Value: 4.4664148547e-16, Cliff's Effect Size: (False, 0.069)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the Astronomy dataset, for the "PRIOR_AGE" feature:
+	Neutral values (MEDIAN): 1302.5, (MEAN): 1440.99174917, (COUNT): 4848
+	Insecure values (MEDIAN): 1320.0, (MEAN): 1434.13013633, (COUNT): 62496
+	Test Statistic: 150725647.0, P-Value: 0.721198294655, Cliff's Effect Size: (False, 0.005)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the Astronomy dataset, for the "CHANGE_FILE_CNT" feature:
+	Neutral values (MEDIAN): 1.0, (MEAN): 3.83725247525, (COUNT): 4848
+	Insecure values (MEDIAN): 1.0, (MEAN): 4.91642665131, (COUNT): 62496
+	Test Statistic: 153681127.5, P-Value: 0.0325821164938, Cliff's Effect Size: (False, 0.014)
+
+======================================================= Comparing ComputationalBiology Features ========================================================
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the ComputationalBiology dataset, for the "ADD_LOC" feature:
+	Neutral values (MEDIAN): 16.0, (MEAN): 524.265254183, (COUNT): 15717
+	Insecure values (MEDIAN): 11.0, (MEAN): 663.841196865, (COUNT): 159216
+	Test Statistic: 1135843668.0, P-Value: 1.0, Cliff's Effect Size: (False, 0.092)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the ComputationalBiology dataset, for the "DEL_LOC" feature:
+	Neutral values (MEDIAN): 5.0, (MEAN): 229.873003754, (COUNT): 15717
+	Insecure values (MEDIAN): 4.0, (MEAN): 472.959878404, (COUNT): 159216
+	Test Statistic: 1212457583.5, P-Value: 0.999999999941, Cliff's Effect Size: (False, 0.031)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the ComputationalBiology dataset, for the "TOT_LOC" feature:
+	Neutral values (MEDIAN): 26.0, (MEAN): 754.138257937, (COUNT): 15717
+	Insecure values (MEDIAN): 19.0, (MEAN): 1136.80107527, (COUNT): 159216
+	Test Statistic: 1164669013.0, P-Value: 1.0, Cliff's Effect Size: (False, 0.069)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the ComputationalBiology dataset, for the "DEV_EXP" feature:
+	Neutral values (MEDIAN): 2308.0, (MEAN): 2825.64172552, (COUNT): 15717
+	Insecure values (MEDIAN): 1667.0, (MEAN): 2271.2382047, (COUNT): 159216
+	Test Statistic: 1092596855.0, P-Value: 1.0, Cliff's Effect Size: (False, 0.127)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the ComputationalBiology dataset, for the "DEV_RECENT" feature:
+	Neutral values (MEDIAN): 641.5, (MEAN): 861.311542934, (COUNT): 15717
+	Insecure values (MEDIAN): 416.75159, (MEAN): 635.691410913, (COUNT): 159216
+	Test Statistic: 1042421613.5, P-Value: 1.0, Cliff's Effect Size: (False, 0.167)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the ComputationalBiology dataset, for the "PRIOR_AGE" feature:
+	Neutral values (MEDIAN): 1949.0, (MEAN): 1995.62683718, (COUNT): 15717
+	Insecure values (MEDIAN): 1937.0, (MEAN): 2059.61426615, (COUNT): 159216
+	Test Statistic: 1263692424.0, P-Value: 0.0192957287847, Cliff's Effect Size: (False, 0.01)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the ComputationalBiology dataset, for the "CHANGE_FILE_CNT" feature:
+	Neutral values (MEDIAN): 2.0, (MEAN): 7.04676464974, (COUNT): 15717
+	Insecure values (MEDIAN): 1.0, (MEAN): 8.00103632801, (COUNT): 159216
+	Test Statistic: 1184258208.0, P-Value: 1.0, Cliff's Effect Size: (False, 0.054)
+
+============================================================== Comparing Others Features ===============================================================
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the Others dataset, for the "ADD_LOC" feature:
+	Neutral values (MEDIAN): 49.0, (MEAN): 360.420600858, (COUNT): 233
+	Insecure values (MEDIAN): 23.0, (MEAN): 593.375655213, (COUNT): 5151
+	Test Statistic: 498083.0, P-Value: 0.99999453546, Cliff's Effect Size: (False, 0.17)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the Others dataset, for the "DEL_LOC" feature:
+	Neutral values (MEDIAN): 14.0, (MEAN): 361.454935622, (COUNT): 233
+	Insecure values (MEDIAN): 9.0, (MEAN): 374.686080373, (COUNT): 5151
+	Test Statistic: 531224.0, P-Value: 0.998527174148, Cliff's Effect Size: (False, 0.115)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the Others dataset, for the "TOT_LOC" feature:
+	Neutral values (MEDIAN): 74.0, (MEAN): 721.875536481, (COUNT): 233
+	Insecure values (MEDIAN): 44.0, (MEAN): 968.061735585, (COUNT): 5151
+	Test Statistic: 520184.5, P-Value: 0.999713624516, Cliff's Effect Size: (False, 0.133)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the Others dataset, for the "DEV_EXP" feature:
+	Neutral values (MEDIAN): 565.0, (MEAN): 602.673819742, (COUNT): 233
+	Insecure values (MEDIAN): 521.0, (MEAN): 518.986022132, (COUNT): 5151
+	Test Statistic: 521971.5, P-Value: 0.999654191744, Cliff's Effect Size: (False, 0.13)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the Others dataset, for the "DEV_RECENT" feature:
+	Neutral values (MEDIAN): 284.5, (MEAN): 202.637261459, (COUNT): 233
+	Insecure values (MEDIAN): 148.46905, (MEAN): 196.79182007, (COUNT): 5151
+	Test Statistic: 595132.5, P-Value: 0.585271319683, Cliff's Effect Size: (False, 0.008)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the Others dataset, for the "PRIOR_AGE" feature:
+	Neutral values (MEDIAN): 2645.0, (MEAN): 2365.77253219, (COUNT): 233
+	Insecure values (MEDIAN): 2682.0, (MEAN): 2469.43486702, (COUNT): 5151
+	Test Statistic: 667392.5, P-Value: 0.00186600119896, Cliff's Effect Size: (False, 0.112)
+
+Comparing "NEUTRAL" and "INSECURE" lists, using the Others dataset, for the "CHANGE_FILE_CNT" feature:
+	Neutral values (MEDIAN): 2.0, (MEAN): 24.5107296137, (COUNT): 233
+	Insecure values (MEDIAN): 2.0, (MEAN): 12.2622791691, (COUNT): 5151
+	Test Statistic: 556603.5, P-Value: 0.972496345657, Cliff's Effect Size: (False, 0.072)
+
+========================================= Fitting Prior Learner Classification Models for Partitioned Datasets =========================================
+
+
+Finished building "DTC" classifier model for original "ComputationalChemistry" dataset.
+Finished building "RFC" classifier model for original "ComputationalChemistry" dataset.
+Finished building "KNN" classifier model for original "ComputationalChemistry" dataset.
+Finished building "ANN" classifier model for original "ComputationalChemistry" dataset.
+Finished building "NBC" classifier model for original "ComputationalChemistry" dataset.
+
+
+Finished building "DTC" classifier model for original "Astronomy" dataset.
+Finished building "RFC" classifier model for original "Astronomy" dataset.
+Finished building "KNN" classifier model for original "Astronomy" dataset.
+Finished building "ANN" classifier model for original "Astronomy" dataset.
+Finished building "NBC" classifier model for original "Astronomy" dataset.
+
+
+Finished building "DTC" classifier model for original "ComputationalBiology" dataset.
+Finished building "RFC" classifier model for original "ComputationalBiology" dataset.
+Finished building "KNN" classifier model for original "ComputationalBiology" dataset.
+Finished building "ANN" classifier model for original "ComputationalBiology" dataset.
+Finished building "NBC" classifier model for original "ComputationalBiology" dataset.
+
+
+Finished building "DTC" classifier model for original "Others" dataset.
+Finished building "RFC" classifier model for original "Others" dataset.
+Finished building "KNN" classifier model for original "Others" dataset.
+Finished building "ANN" classifier model for original "Others" dataset.
+Finished building "NBC" classifier model for original "Others" dataset.
+
+================================ Testing Prior Classifiers against ComputationalChemistry Dataset for Transfer Learning ================================
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on original "ComputationalChemistry" dataset tested with original "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.93      0.91      0.92     62496
+    INSECURE       0.07      0.09      0.08      4848
+
+   micro avg       0.85      0.85      0.85     67344
+   macro avg       0.50      0.50      0.50     67344
+weighted avg       0.87      0.85      0.86     67344
+
+Confusion Matrix:
+[[56669  5827]
+ [ 4407   441]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on original "ComputationalChemistry" dataset tested with original "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.93      1.00      0.96     62496
+    INSECURE       0.09      0.00      0.00      4848
+
+   micro avg       0.93      0.93      0.93     67344
+   macro avg       0.51      0.50      0.48     67344
+weighted avg       0.87      0.93      0.89     67344
+
+Confusion Matrix:
+[[62410    86]
+ [ 4840     8]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on original "ComputationalChemistry" dataset tested with original "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.93      0.99      0.96     62496
+    INSECURE       0.07      0.01      0.02      4848
+
+   micro avg       0.92      0.92      0.92     67344
+   macro avg       0.50      0.50      0.49     67344
+weighted avg       0.87      0.92      0.89     67344
+
+Confusion Matrix:
+[[61814   682]
+ [ 4795    53]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on original "ComputationalChemistry" dataset tested with original "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.93      0.88      0.91     62496
+    INSECURE       0.08      0.12      0.09      4848
+
+   micro avg       0.83      0.83      0.83     67344
+   macro avg       0.50      0.50      0.50     67344
+weighted avg       0.87      0.83      0.85     67344
+
+Confusion Matrix:
+[[55226  7270]
+ [ 4253   595]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on original "ComputationalChemistry" dataset tested with original "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.92      0.23      0.36     62496
+    INSECURE       0.07      0.75      0.13      4848
+
+   micro avg       0.26      0.26      0.26     67344
+   macro avg       0.49      0.49      0.24     67344
+weighted avg       0.86      0.26      0.35     67344
+
+Confusion Matrix:
+[[14088 48408]
+ [ 1229  3619]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on original "ComputationalChemistry" dataset tested with original "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.91      0.92      0.92    159216
+    INSECURE       0.10      0.09      0.10     15717
+
+   micro avg       0.85      0.85      0.85    174933
+   macro avg       0.51      0.51      0.51    174933
+weighted avg       0.84      0.85      0.84    174933
+
+Confusion Matrix:
+[[146541  12675]
+ [ 14295   1422]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on original "ComputationalChemistry" dataset tested with original "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.91      1.00      0.95    159216
+    INSECURE       0.06      0.00      0.00     15717
+
+   micro avg       0.91      0.91      0.91    174933
+   macro avg       0.48      0.50      0.48    174933
+weighted avg       0.83      0.91      0.87    174933
+
+Confusion Matrix:
+[[158911    305]
+ [ 15699     18]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on original "ComputationalChemistry" dataset tested with original "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.91      0.99      0.95    159216
+    INSECURE       0.09      0.01      0.01     15717
+
+   micro avg       0.90      0.90      0.90    174933
+   macro avg       0.50      0.50      0.48    174933
+weighted avg       0.84      0.90      0.87    174933
+
+Confusion Matrix:
+[[157908   1308]
+ [ 15590    127]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on original "ComputationalChemistry" dataset tested with original "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.90      0.80      0.85    159216
+    INSECURE       0.06      0.12      0.08     15717
+
+   micro avg       0.74      0.74      0.74    174933
+   macro avg       0.48      0.46      0.46    174933
+weighted avg       0.83      0.74      0.78    174933
+
+Confusion Matrix:
+[[127198  32018]
+ [ 13805   1912]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on original "ComputationalChemistry" dataset tested with original "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.91      0.14      0.24    159216
+    INSECURE       0.09      0.86      0.16     15717
+
+   micro avg       0.20      0.20      0.20    174933
+   macro avg       0.50      0.50      0.20    174933
+weighted avg       0.84      0.20      0.23    174933
+
+Confusion Matrix:
+[[ 22008 137208]
+ [  2134  13583]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on original "ComputationalChemistry" dataset tested with original "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       1.00      1.00      1.00      5151
+    INSECURE       1.00      0.98      0.99       233
+
+   micro avg       1.00      1.00      1.00      5384
+   macro avg       1.00      0.99      1.00      5384
+weighted avg       1.00      1.00      1.00      5384
+
+Confusion Matrix:
+[[5151    0]
+ [   4  229]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on original "ComputationalChemistry" dataset tested with original "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       1.00      1.00      1.00      5151
+    INSECURE       0.99      0.98      0.98       233
+
+   micro avg       1.00      1.00      1.00      5384
+   macro avg       1.00      0.99      0.99      5384
+weighted avg       1.00      1.00      1.00      5384
+
+Confusion Matrix:
+[[5149    2]
+ [   5  228]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on original "ComputationalChemistry" dataset tested with original "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.97      1.00      0.98      5151
+    INSECURE       0.71      0.21      0.32       233
+
+   micro avg       0.96      0.96      0.96      5384
+   macro avg       0.84      0.60      0.65      5384
+weighted avg       0.95      0.96      0.95      5384
+
+Confusion Matrix:
+[[5131   20]
+ [ 185   48]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on original "ComputationalChemistry" dataset tested with original "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.96      0.97      0.97      5151
+    INSECURE       0.12      0.09      0.10       233
+
+   micro avg       0.93      0.93      0.93      5384
+   macro avg       0.54      0.53      0.53      5384
+weighted avg       0.92      0.93      0.93      5384
+
+Confusion Matrix:
+[[5003  148]
+ [ 213   20]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on original "ComputationalChemistry" dataset tested with original "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.96      0.72      0.83      5151
+    INSECURE       0.06      0.40      0.11       233
+
+   micro avg       0.71      0.71      0.71      5384
+   macro avg       0.51      0.56      0.47      5384
+weighted avg       0.93      0.71      0.80      5384
+
+Confusion Matrix:
+[[3730 1421]
+ [ 139   94]]
+
+====================================== Testing Prior Classifiers against Astronomy Dataset for Transfer Learning =======================================
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on original "Astronomy" dataset tested with original "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.94      0.91      0.93     49397
+    INSECURE       0.06      0.09      0.07      2998
+
+   micro avg       0.87      0.87      0.87     52395
+   macro avg       0.50      0.50      0.50     52395
+weighted avg       0.89      0.87      0.88     52395
+
+Confusion Matrix:
+[[45125  4272]
+ [ 2725   273]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on original "Astronomy" dataset tested with original "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.94      0.98      0.96     49397
+    INSECURE       0.06      0.02      0.03      2998
+
+   micro avg       0.93      0.93      0.93     52395
+   macro avg       0.50      0.50      0.49     52395
+weighted avg       0.89      0.93      0.91     52395
+
+Confusion Matrix:
+[[48560   837]
+ [ 2947    51]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on original "Astronomy" dataset tested with original "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.94      0.98      0.96     49397
+    INSECURE       0.10      0.04      0.06      2998
+
+   micro avg       0.92      0.92      0.92     52395
+   macro avg       0.52      0.51      0.51     52395
+weighted avg       0.90      0.92      0.91     52395
+
+Confusion Matrix:
+[[48315  1082]
+ [ 2879   119]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on original "Astronomy" dataset tested with original "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.94      0.79      0.86     49397
+    INSECURE       0.06      0.21      0.09      2998
+
+   micro avg       0.76      0.76      0.76     52395
+   macro avg       0.50      0.50      0.47     52395
+weighted avg       0.89      0.76      0.81     52395
+
+Confusion Matrix:
+[[38936 10461]
+ [ 2367   631]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on original "Astronomy" dataset tested with original "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.94      0.26      0.40     49397
+    INSECURE       0.06      0.72      0.10      2998
+
+   micro avg       0.28      0.28      0.28     52395
+   macro avg       0.50      0.49      0.25     52395
+weighted avg       0.89      0.28      0.38     52395
+
+Confusion Matrix:
+[[12598 36799]
+ [  835  2163]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on original "Astronomy" dataset tested with original "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.91      0.92      0.92    159216
+    INSECURE       0.10      0.09      0.10     15717
+
+   micro avg       0.85      0.85      0.85    174933
+   macro avg       0.51      0.51      0.51    174933
+weighted avg       0.84      0.85      0.84    174933
+
+Confusion Matrix:
+[[146541  12675]
+ [ 14295   1422]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on original "Astronomy" dataset tested with original "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.91      1.00      0.95    159216
+    INSECURE       0.06      0.00      0.00     15717
+
+   micro avg       0.91      0.91      0.91    174933
+   macro avg       0.48      0.50      0.48    174933
+weighted avg       0.83      0.91      0.87    174933
+
+Confusion Matrix:
+[[158911    305]
+ [ 15699     18]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on original "Astronomy" dataset tested with original "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.91      0.99      0.95    159216
+    INSECURE       0.09      0.01      0.01     15717
+
+   micro avg       0.90      0.90      0.90    174933
+   macro avg       0.50      0.50      0.48    174933
+weighted avg       0.84      0.90      0.87    174933
+
+Confusion Matrix:
+[[157908   1308]
+ [ 15590    127]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on original "Astronomy" dataset tested with original "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.90      0.80      0.85    159216
+    INSECURE       0.06      0.12      0.08     15717
+
+   micro avg       0.74      0.74      0.74    174933
+   macro avg       0.48      0.46      0.46    174933
+weighted avg       0.83      0.74      0.78    174933
+
+Confusion Matrix:
+[[127198  32018]
+ [ 13805   1912]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on original "Astronomy" dataset tested with original "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.91      0.14      0.24    159216
+    INSECURE       0.09      0.86      0.16     15717
+
+   micro avg       0.20      0.20      0.20    174933
+   macro avg       0.50      0.50      0.20    174933
+weighted avg       0.84      0.20      0.23    174933
+
+Confusion Matrix:
+[[ 22008 137208]
+ [  2134  13583]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on original "Astronomy" dataset tested with original "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       1.00      1.00      1.00      5151
+    INSECURE       1.00      0.98      0.99       233
+
+   micro avg       1.00      1.00      1.00      5384
+   macro avg       1.00      0.99      1.00      5384
+weighted avg       1.00      1.00      1.00      5384
+
+Confusion Matrix:
+[[5151    0]
+ [   4  229]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on original "Astronomy" dataset tested with original "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       1.00      1.00      1.00      5151
+    INSECURE       0.99      0.98      0.98       233
+
+   micro avg       1.00      1.00      1.00      5384
+   macro avg       1.00      0.99      0.99      5384
+weighted avg       1.00      1.00      1.00      5384
+
+Confusion Matrix:
+[[5149    2]
+ [   5  228]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on original "Astronomy" dataset tested with original "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.97      1.00      0.98      5151
+    INSECURE       0.71      0.21      0.32       233
+
+   micro avg       0.96      0.96      0.96      5384
+   macro avg       0.84      0.60      0.65      5384
+weighted avg       0.95      0.96      0.95      5384
+
+Confusion Matrix:
+[[5131   20]
+ [ 185   48]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on original "Astronomy" dataset tested with original "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.96      0.97      0.97      5151
+    INSECURE       0.12      0.09      0.10       233
+
+   micro avg       0.93      0.93      0.93      5384
+   macro avg       0.54      0.53      0.53      5384
+weighted avg       0.92      0.93      0.93      5384
+
+Confusion Matrix:
+[[5003  148]
+ [ 213   20]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on original "Astronomy" dataset tested with original "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.96      0.72      0.83      5151
+    INSECURE       0.06      0.40      0.11       233
+
+   micro avg       0.71      0.71      0.71      5384
+   macro avg       0.51      0.56      0.47      5384
+weighted avg       0.93      0.71      0.80      5384
+
+Confusion Matrix:
+[[3730 1421]
+ [ 139   94]]
+
+================================= Testing Prior Classifiers against ComputationalBiology Dataset for Transfer Learning =================================
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on original "ComputationalBiology" dataset tested with original "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.94      0.91      0.93     49397
+    INSECURE       0.06      0.09      0.07      2998
+
+   micro avg       0.87      0.87      0.87     52395
+   macro avg       0.50      0.50      0.50     52395
+weighted avg       0.89      0.87      0.88     52395
+
+Confusion Matrix:
+[[45125  4272]
+ [ 2725   273]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on original "ComputationalBiology" dataset tested with original "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.94      0.98      0.96     49397
+    INSECURE       0.06      0.02      0.03      2998
+
+   micro avg       0.93      0.93      0.93     52395
+   macro avg       0.50      0.50      0.49     52395
+weighted avg       0.89      0.93      0.91     52395
+
+Confusion Matrix:
+[[48560   837]
+ [ 2947    51]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on original "ComputationalBiology" dataset tested with original "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.94      0.98      0.96     49397
+    INSECURE       0.10      0.04      0.06      2998
+
+   micro avg       0.92      0.92      0.92     52395
+   macro avg       0.52      0.51      0.51     52395
+weighted avg       0.90      0.92      0.91     52395
+
+Confusion Matrix:
+[[48315  1082]
+ [ 2879   119]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on original "ComputationalBiology" dataset tested with original "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.94      0.79      0.86     49397
+    INSECURE       0.06      0.21      0.09      2998
+
+   micro avg       0.76      0.76      0.76     52395
+   macro avg       0.50      0.50      0.47     52395
+weighted avg       0.89      0.76      0.81     52395
+
+Confusion Matrix:
+[[38936 10461]
+ [ 2367   631]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on original "ComputationalBiology" dataset tested with original "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.94      0.26      0.40     49397
+    INSECURE       0.06      0.72      0.10      2998
+
+   micro avg       0.28      0.28      0.28     52395
+   macro avg       0.50      0.49      0.25     52395
+weighted avg       0.89      0.28      0.38     52395
+
+Confusion Matrix:
+[[12598 36799]
+ [  835  2163]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on original "ComputationalBiology" dataset tested with original "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.93      0.91      0.92     62496
+    INSECURE       0.07      0.09      0.08      4848
+
+   micro avg       0.85      0.85      0.85     67344
+   macro avg       0.50      0.50      0.50     67344
+weighted avg       0.87      0.85      0.86     67344
+
+Confusion Matrix:
+[[56669  5827]
+ [ 4407   441]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on original "ComputationalBiology" dataset tested with original "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.93      1.00      0.96     62496
+    INSECURE       0.09      0.00      0.00      4848
+
+   micro avg       0.93      0.93      0.93     67344
+   macro avg       0.51      0.50      0.48     67344
+weighted avg       0.87      0.93      0.89     67344
+
+Confusion Matrix:
+[[62410    86]
+ [ 4840     8]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on original "ComputationalBiology" dataset tested with original "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.93      0.99      0.96     62496
+    INSECURE       0.07      0.01      0.02      4848
+
+   micro avg       0.92      0.92      0.92     67344
+   macro avg       0.50      0.50      0.49     67344
+weighted avg       0.87      0.92      0.89     67344
+
+Confusion Matrix:
+[[61814   682]
+ [ 4795    53]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on original "ComputationalBiology" dataset tested with original "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.93      0.88      0.91     62496
+    INSECURE       0.08      0.12      0.09      4848
+
+   micro avg       0.83      0.83      0.83     67344
+   macro avg       0.50      0.50      0.50     67344
+weighted avg       0.87      0.83      0.85     67344
+
+Confusion Matrix:
+[[55226  7270]
+ [ 4253   595]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on original "ComputationalBiology" dataset tested with original "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.92      0.23      0.36     62496
+    INSECURE       0.07      0.75      0.13      4848
+
+   micro avg       0.26      0.26      0.26     67344
+   macro avg       0.49      0.49      0.24     67344
+weighted avg       0.86      0.26      0.35     67344
+
+Confusion Matrix:
+[[14088 48408]
+ [ 1229  3619]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on original "ComputationalBiology" dataset tested with original "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       1.00      1.00      1.00      5151
+    INSECURE       1.00      0.98      0.99       233
+
+   micro avg       1.00      1.00      1.00      5384
+   macro avg       1.00      0.99      1.00      5384
+weighted avg       1.00      1.00      1.00      5384
+
+Confusion Matrix:
+[[5151    0]
+ [   4  229]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on original "ComputationalBiology" dataset tested with original "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       1.00      1.00      1.00      5151
+    INSECURE       0.99      0.98      0.98       233
+
+   micro avg       1.00      1.00      1.00      5384
+   macro avg       1.00      0.99      0.99      5384
+weighted avg       1.00      1.00      1.00      5384
+
+Confusion Matrix:
+[[5149    2]
+ [   5  228]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on original "ComputationalBiology" dataset tested with original "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.97      1.00      0.98      5151
+    INSECURE       0.71      0.21      0.32       233
+
+   micro avg       0.96      0.96      0.96      5384
+   macro avg       0.84      0.60      0.65      5384
+weighted avg       0.95      0.96      0.95      5384
+
+Confusion Matrix:
+[[5131   20]
+ [ 185   48]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on original "ComputationalBiology" dataset tested with original "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.96      0.97      0.97      5151
+    INSECURE       0.12      0.09      0.10       233
+
+   micro avg       0.93      0.93      0.93      5384
+   macro avg       0.54      0.53      0.53      5384
+weighted avg       0.92      0.93      0.93      5384
+
+Confusion Matrix:
+[[5003  148]
+ [ 213   20]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on original "ComputationalBiology" dataset tested with original "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.96      0.72      0.83      5151
+    INSECURE       0.06      0.40      0.11       233
+
+   micro avg       0.71      0.71      0.71      5384
+   macro avg       0.51      0.56      0.47      5384
+weighted avg       0.93      0.71      0.80      5384
+
+Confusion Matrix:
+[[3730 1421]
+ [ 139   94]]
+
+======================================== Testing Prior Classifiers against Others Dataset for Transfer Learning ========================================
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on original "Others" dataset tested with original "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.94      0.91      0.93     49397
+    INSECURE       0.06      0.09      0.07      2998
+
+   micro avg       0.87      0.87      0.87     52395
+   macro avg       0.50      0.50      0.50     52395
+weighted avg       0.89      0.87      0.88     52395
+
+Confusion Matrix:
+[[45125  4272]
+ [ 2725   273]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on original "Others" dataset tested with original "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.94      0.98      0.96     49397
+    INSECURE       0.06      0.02      0.03      2998
+
+   micro avg       0.93      0.93      0.93     52395
+   macro avg       0.50      0.50      0.49     52395
+weighted avg       0.89      0.93      0.91     52395
+
+Confusion Matrix:
+[[48560   837]
+ [ 2947    51]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on original "Others" dataset tested with original "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.94      0.98      0.96     49397
+    INSECURE       0.10      0.04      0.06      2998
+
+   micro avg       0.92      0.92      0.92     52395
+   macro avg       0.52      0.51      0.51     52395
+weighted avg       0.90      0.92      0.91     52395
+
+Confusion Matrix:
+[[48315  1082]
+ [ 2879   119]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on original "Others" dataset tested with original "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.94      0.79      0.86     49397
+    INSECURE       0.06      0.21      0.09      2998
+
+   micro avg       0.76      0.76      0.76     52395
+   macro avg       0.50      0.50      0.47     52395
+weighted avg       0.89      0.76      0.81     52395
+
+Confusion Matrix:
+[[38936 10461]
+ [ 2367   631]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on original "Others" dataset tested with original "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.94      0.26      0.40     49397
+    INSECURE       0.06      0.72      0.10      2998
+
+   micro avg       0.28      0.28      0.28     52395
+   macro avg       0.50      0.49      0.25     52395
+weighted avg       0.89      0.28      0.38     52395
+
+Confusion Matrix:
+[[12598 36799]
+ [  835  2163]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on original "Others" dataset tested with original "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.93      0.91      0.92     62496
+    INSECURE       0.07      0.09      0.08      4848
+
+   micro avg       0.85      0.85      0.85     67344
+   macro avg       0.50      0.50      0.50     67344
+weighted avg       0.87      0.85      0.86     67344
+
+Confusion Matrix:
+[[56669  5827]
+ [ 4407   441]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on original "Others" dataset tested with original "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.93      1.00      0.96     62496
+    INSECURE       0.09      0.00      0.00      4848
+
+   micro avg       0.93      0.93      0.93     67344
+   macro avg       0.51      0.50      0.48     67344
+weighted avg       0.87      0.93      0.89     67344
+
+Confusion Matrix:
+[[62410    86]
+ [ 4840     8]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on original "Others" dataset tested with original "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.93      0.99      0.96     62496
+    INSECURE       0.07      0.01      0.02      4848
+
+   micro avg       0.92      0.92      0.92     67344
+   macro avg       0.50      0.50      0.49     67344
+weighted avg       0.87      0.92      0.89     67344
+
+Confusion Matrix:
+[[61814   682]
+ [ 4795    53]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on original "Others" dataset tested with original "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.93      0.88      0.91     62496
+    INSECURE       0.08      0.12      0.09      4848
+
+   micro avg       0.83      0.83      0.83     67344
+   macro avg       0.50      0.50      0.50     67344
+weighted avg       0.87      0.83      0.85     67344
+
+Confusion Matrix:
+[[55226  7270]
+ [ 4253   595]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on original "Others" dataset tested with original "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.92      0.23      0.36     62496
+    INSECURE       0.07      0.75      0.13      4848
+
+   micro avg       0.26      0.26      0.26     67344
+   macro avg       0.49      0.49      0.24     67344
+weighted avg       0.86      0.26      0.35     67344
+
+Confusion Matrix:
+[[14088 48408]
+ [ 1229  3619]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on original "Others" dataset tested with original "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.91      0.92      0.92    159216
+    INSECURE       0.10      0.09      0.10     15717
+
+   micro avg       0.85      0.85      0.85    174933
+   macro avg       0.51      0.51      0.51    174933
+weighted avg       0.84      0.85      0.84    174933
+
+Confusion Matrix:
+[[146541  12675]
+ [ 14295   1422]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on original "Others" dataset tested with original "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.91      1.00      0.95    159216
+    INSECURE       0.06      0.00      0.00     15717
+
+   micro avg       0.91      0.91      0.91    174933
+   macro avg       0.48      0.50      0.48    174933
+weighted avg       0.83      0.91      0.87    174933
+
+Confusion Matrix:
+[[158911    305]
+ [ 15699     18]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on original "Others" dataset tested with original "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.91      0.99      0.95    159216
+    INSECURE       0.09      0.01      0.01     15717
+
+   micro avg       0.90      0.90      0.90    174933
+   macro avg       0.50      0.50      0.48    174933
+weighted avg       0.84      0.90      0.87    174933
+
+Confusion Matrix:
+[[157908   1308]
+ [ 15590    127]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on original "Others" dataset tested with original "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.90      0.80      0.85    159216
+    INSECURE       0.06      0.12      0.08     15717
+
+   micro avg       0.74      0.74      0.74    174933
+   macro avg       0.48      0.46      0.46    174933
+weighted avg       0.83      0.74      0.78    174933
+
+Confusion Matrix:
+[[127198  32018]
+ [ 13805   1912]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on original "Others" dataset tested with original "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.91      0.14      0.24    159216
+    INSECURE       0.09      0.86      0.16     15717
+
+   micro avg       0.20      0.20      0.20    174933
+   macro avg       0.50      0.50      0.20    174933
+weighted avg       0.84      0.20      0.23    174933
+
+Confusion Matrix:
+[[ 22008 137208]
+ [  2134  13583]]
+
+Using 50 epoch(s) and a batch size of 10...
+
+================================ Training Deep Neural Network with ComputationalChemistry Dataset for Transfer Learning ================================
+Epoch 1/50
+ - 7s - loss: 14.5041 - acc: 0.8816
+Epoch 2/50
+ - 6s - loss: 2.6395 - acc: 0.9285
+Epoch 3/50
+ - 6s - loss: 1.0238 - acc: 0.9395
+Epoch 4/50
+ - 6s - loss: 0.2532 - acc: 0.9428
+Epoch 5/50
+ - 6s - loss: 0.2194 - acc: 0.9428
+Epoch 6/50
+ - 6s - loss: 0.2198 - acc: 0.9427
+Epoch 7/50
+ - 6s - loss: 0.2196 - acc: 0.9428
+Epoch 8/50
+ - 6s - loss: 0.2250 - acc: 0.9428
+Epoch 9/50
+ - 6s - loss: 0.2195 - acc: 0.9428
+Epoch 10/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 11/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 12/50
+ - 6s - loss: 0.2240 - acc: 0.9428
+Epoch 13/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 14/50
+ - 6s - loss: 0.2215 - acc: 0.9428
+Epoch 15/50
+ - 6s - loss: 0.2203 - acc: 0.9428
+Epoch 16/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 17/50
+ - 6s - loss: 0.2194 - acc: 0.9428
+Epoch 18/50
+ - 6s - loss: 0.2248 - acc: 0.9428
+Epoch 19/50
+ - 6s - loss: 0.2303 - acc: 0.9428
+Epoch 20/50
+ - 6s - loss: 0.2483 - acc: 0.9427
+Epoch 21/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 22/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 23/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 24/50
+ - 6s - loss: 0.2198 - acc: 0.9428
+Epoch 25/50
+ - 6s - loss: 0.2382 - acc: 0.9428
+Epoch 26/50
+ - 6s - loss: 0.2192 - acc: 0.9428
+Epoch 27/50
+ - 6s - loss: 0.2219 - acc: 0.9428
+Epoch 28/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 29/50
+ - 6s - loss: 0.2196 - acc: 0.9428
+Epoch 30/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 31/50
+ - 6s - loss: 0.2194 - acc: 0.9428
+Epoch 32/50
+ - 6s - loss: 0.2194 - acc: 0.9428
+Epoch 33/50
+ - 6s - loss: 0.2206 - acc: 0.9428
+Epoch 34/50
+ - 6s - loss: 0.2200 - acc: 0.9428
+Epoch 35/50
+ - 6s - loss: 0.2206 - acc: 0.9428
+Epoch 36/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 37/50
+ - 6s - loss: 0.2283 - acc: 0.9428
+Epoch 38/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 39/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 40/50
+ - 6s - loss: 0.2200 - acc: 0.9428
+Epoch 41/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 42/50
+ - 6s - loss: 0.2198 - acc: 0.9428
+Epoch 43/50
+ - 6s - loss: 0.2476 - acc: 0.9428
+Epoch 44/50
+ - 6s - loss: 0.2630 - acc: 0.9428
+Epoch 45/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 46/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 47/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 48/50
+ - 6s - loss: 0.2217 - acc: 0.9428
+Epoch 49/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+Epoch 50/50
+ - 6s - loss: 0.2193 - acc: 0.9428
+
+Results for Deep Neural Network trained on original "ComputationalChemistry" dataset tested with original "Astronomy" dataset:
+	Accuracy: 92.8%, Precision: 0.0, Recall: 0.0, F-Score: 0.0
+	Confusion Matrix:
+[[62496     0]
+ [ 4848     0]]
+
+Results for Deep Neural Network trained on original "ComputationalChemistry" dataset tested with original "ComputationalBiology" dataset:
+	Accuracy: 91.02%, Precision: 0.0, Recall: 0.0, F-Score: 0.0
+	Confusion Matrix:
+[[159216      0]
+ [ 15717      0]]
+
+Results for Deep Neural Network trained on original "ComputationalChemistry" dataset tested with original "Others" dataset:
+	Accuracy: 95.67%, Precision: 0.0, Recall: 0.0, F-Score: 0.0
+	Confusion Matrix:
+[[5151    0]
+ [ 233    0]]
+
+====================================== Training Deep Neural Network with Astronomy Dataset for Transfer Learning =======================================
+Epoch 1/50
+ - 8s - loss: 0.2604 - acc: 0.9280
+Epoch 2/50
+ - 8s - loss: 0.2591 - acc: 0.9280
+Epoch 3/50
+ - 8s - loss: 0.2601 - acc: 0.9280
+Epoch 4/50
+ - 8s - loss: 0.2588 - acc: 0.9280
+Epoch 5/50
+ - 8s - loss: 0.2590 - acc: 0.9280
+Epoch 6/50
+ - 8s - loss: 0.2589 - acc: 0.9280
+Epoch 7/50
+ - 8s - loss: 0.2590 - acc: 0.9280
+Epoch 8/50
+ - 8s - loss: 0.2594 - acc: 0.9280
+Epoch 9/50
+ - 8s - loss: 0.2589 - acc: 0.9280
+Epoch 10/50
+ - 8s - loss: 0.2588 - acc: 0.9280
+Epoch 11/50
+ - 8s - loss: 0.2593 - acc: 0.9280
+Epoch 12/50
+ - 8s - loss: 0.2594 - acc: 0.9280
+Epoch 13/50
+ - 8s - loss: 0.2592 - acc: 0.9280
+Epoch 14/50
+ - 8s - loss: 0.2585 - acc: 0.9280
+Epoch 15/50
+ - 8s - loss: 0.2587 - acc: 0.9280
+Epoch 16/50
+ - 8s - loss: 0.2587 - acc: 0.9280
+Epoch 17/50
+ - 8s - loss: 0.2592 - acc: 0.9280
+Epoch 18/50
+ - 8s - loss: 0.2590 - acc: 0.9280
+Epoch 19/50
+ - 8s - loss: 0.2587 - acc: 0.9280
+Epoch 20/50
+ - 8s - loss: 0.2589 - acc: 0.9280
+Epoch 21/50
+ - 9s - loss: 0.2592 - acc: 0.9280
+Epoch 22/50
+ - 8s - loss: 0.2585 - acc: 0.9280
+Epoch 23/50
+ - 8s - loss: 0.2598 - acc: 0.9280
+Epoch 24/50
+ - 8s - loss: 0.2591 - acc: 0.9280
+Epoch 25/50
+ - 8s - loss: 0.2590 - acc: 0.9280
+Epoch 26/50
+ - 8s - loss: 0.2588 - acc: 0.9280
+Epoch 27/50
+ - 8s - loss: 0.2588 - acc: 0.9280
+Epoch 28/50
+ - 8s - loss: 0.2603 - acc: 0.9280
+Epoch 29/50
+ - 8s - loss: 0.2593 - acc: 0.9280
+Epoch 30/50
+ - 8s - loss: 0.2587 - acc: 0.9280
+Epoch 31/50
+ - 8s - loss: 0.2594 - acc: 0.9280
+Epoch 32/50
+ - 8s - loss: 0.2588 - acc: 0.9280
+Epoch 33/50
+ - 8s - loss: 0.2588 - acc: 0.9280
+Epoch 34/50
+ - 8s - loss: 0.2621 - acc: 0.9280
+Epoch 35/50
+ - 9s - loss: 0.2589 - acc: 0.9280
+Epoch 36/50
+ - 8s - loss: 0.2585 - acc: 0.9280
+Epoch 37/50
+ - 8s - loss: 0.2589 - acc: 0.9280
+Epoch 38/50
+ - 8s - loss: 0.2588 - acc: 0.9280
+Epoch 39/50
+ - 8s - loss: 0.2588 - acc: 0.9280
+Epoch 40/50
+ - 8s - loss: 0.2635 - acc: 0.9280
+Epoch 41/50
+ - 8s - loss: 0.2588 - acc: 0.9280
+Epoch 42/50
+ - 8s - loss: 0.2588 - acc: 0.9280
+Epoch 43/50
+ - 8s - loss: 0.2694 - acc: 0.9280
+Epoch 44/50
+ - 8s - loss: 0.2591 - acc: 0.9280
+Epoch 45/50
+ - 8s - loss: 0.2588 - acc: 0.9280
+Epoch 46/50
+ - 8s - loss: 0.2602 - acc: 0.9280
+Epoch 47/50
+ - 8s - loss: 0.2587 - acc: 0.9280
+Epoch 48/50
+ - 8s - loss: 0.2614 - acc: 0.9280
+Epoch 49/50
+ - 8s - loss: 0.2589 - acc: 0.9280
+Epoch 50/50
+ - 8s - loss: 0.2591 - acc: 0.9280
+
+Results for Deep Neural Network trained on original "Astronomy" dataset tested with original "ComputationalChemistry" dataset:
+	Accuracy: 94.28%, Precision: 0.0, Recall: 0.0, F-Score: 0.0
+	Confusion Matrix:
+[[49397     0]
+ [ 2998     0]]
+
+Results for Deep Neural Network trained on original "Astronomy" dataset tested with original "ComputationalBiology" dataset:
+	Accuracy: 91.02%, Precision: 0.0, Recall: 0.0, F-Score: 0.0
+	Confusion Matrix:
+[[159216      0]
+ [ 15717      0]]
+
+Results for Deep Neural Network trained on original "Astronomy" dataset tested with original "Others" dataset:
+	Accuracy: 95.67%, Precision: 0.0, Recall: 0.0, F-Score: 0.0
+	Confusion Matrix:
+[[5151    0]
+ [ 233    0]]
+
+================================= Training Deep Neural Network with ComputationalBiology Dataset for Transfer Learning =================================
+Epoch 1/50
+ - 20s - loss: 0.3027 - acc: 0.9102
+Epoch 2/50
+ - 20s - loss: 0.3024 - acc: 0.9102
+Epoch 3/50
+ - 20s - loss: 0.3022 - acc: 0.9102
+Epoch 4/50
+ - 20s - loss: 0.3115 - acc: 0.9102
+Epoch 5/50
+ - 20s - loss: 0.3029 - acc: 0.9102
+Epoch 6/50
+ - 20s - loss: 0.3022 - acc: 0.9102
+Epoch 7/50
+ - 20s - loss: 0.3023 - acc: 0.9102
+Epoch 8/50
+ - 20s - loss: 0.3028 - acc: 0.9102
+Epoch 9/50
+ - 20s - loss: 0.3022 - acc: 0.9102
+Epoch 10/50
+ - 20s - loss: 0.3030 - acc: 0.9102
+Epoch 11/50
+ - 20s - loss: 0.3022 - acc: 0.9102
+Epoch 12/50
+ - 20s - loss: 0.3034 - acc: 0.9102
+Epoch 13/50
+ - 20s - loss: 0.3027 - acc: 0.9102
+Epoch 14/50
+ - 20s - loss: 0.3022 - acc: 0.9102
+Epoch 15/50
+ - 20s - loss: 0.3022 - acc: 0.9102
+Epoch 16/50
+ - 20s - loss: 0.3048 - acc: 0.9102
+Epoch 17/50
+ - 20s - loss: 0.3023 - acc: 0.9102
+Epoch 18/50
+ - 20s - loss: 0.3043 - acc: 0.9102
+Epoch 19/50
+ - 20s - loss: 0.3022 - acc: 0.9102
+Epoch 20/50
+ - 20s - loss: 0.3025 - acc: 0.9102
+Epoch 21/50
+ - 20s - loss: 0.3026 - acc: 0.9102
+Epoch 22/50
+ - 20s - loss: 0.3025 - acc: 0.9102
+Epoch 23/50
+ - 20s - loss: 0.3231 - acc: 0.9102
+Epoch 24/50
+ - 20s - loss: 0.3244 - acc: 0.9102
+Epoch 25/50
+ - 20s - loss: 0.3026 - acc: 0.9102
+Epoch 26/50
+ - 20s - loss: 0.3029 - acc: 0.9102
+Epoch 27/50
+ - 20s - loss: 0.3025 - acc: 0.9102
+Epoch 28/50
+ - 20s - loss: 0.3508 - acc: 0.9102
+Epoch 29/50
+ - 20s - loss: 0.3022 - acc: 0.9102
+Epoch 30/50
+ - 20s - loss: 0.3212 - acc: 0.9102
+Epoch 31/50
+ - 20s - loss: 0.3683 - acc: 0.9102
+Epoch 32/50
+ - 20s - loss: 0.3039 - acc: 0.9102
+Epoch 33/50
+ - 20s - loss: 0.3023 - acc: 0.9102
+Epoch 34/50
+ - 20s - loss: 0.3042 - acc: 0.9102
+Epoch 35/50
+ - 20s - loss: 0.3023 - acc: 0.9102
+Epoch 36/50
+ - 20s - loss: 0.3022 - acc: 0.9102
+Epoch 37/50
+ - 20s - loss: 0.3045 - acc: 0.9102
+Epoch 38/50
+ - 20s - loss: 0.3049 - acc: 0.9102
+Epoch 39/50
+ - 20s - loss: 0.3027 - acc: 0.9102
+Epoch 40/50
+ - 20s - loss: 0.3251 - acc: 0.9102
+Epoch 41/50
+ - 20s - loss: 0.3039 - acc: 0.9102
+Epoch 42/50
+ - 20s - loss: 0.3026 - acc: 0.9102
+Epoch 43/50
+ - 20s - loss: 0.3030 - acc: 0.9102
+Epoch 44/50
+ - 20s - loss: 0.3159 - acc: 0.9102
+Epoch 45/50
+ - 20s - loss: 0.3039 - acc: 0.9102
+Epoch 46/50
+ - 20s - loss: 0.3023 - acc: 0.9102
+Epoch 47/50
+ - 20s - loss: 0.3022 - acc: 0.9102
+Epoch 48/50
+ - 20s - loss: 0.3022 - acc: 0.9102
+Epoch 49/50
+ - 20s - loss: 0.3063 - acc: 0.9102
+Epoch 50/50
+ - 20s - loss: 0.3041 - acc: 0.9102
+
+Results for Deep Neural Network trained on original "ComputationalBiology" dataset tested with original "ComputationalChemistry" dataset:
+	Accuracy: 94.28%, Precision: 0.0, Recall: 0.0, F-Score: 0.0
+	Confusion Matrix:
+[[49397     0]
+ [ 2998     0]]
+
+Results for Deep Neural Network trained on original "ComputationalBiology" dataset tested with original "Astronomy" dataset:
+	Accuracy: 92.8%, Precision: 0.0, Recall: 0.0, F-Score: 0.0
+	Confusion Matrix:
+[[62496     0]
+ [ 4848     0]]
+
+Results for Deep Neural Network trained on original "ComputationalBiology" dataset tested with original "Others" dataset:
+	Accuracy: 95.67%, Precision: 0.0, Recall: 0.0, F-Score: 0.0
+	Confusion Matrix:
+[[5151    0]
+ [ 233    0]]
+
+======================================== Training Deep Neural Network with Others Dataset for Transfer Learning ========================================
+Epoch 1/50
+ - 1s - loss: 0.1897 - acc: 0.9567
+Epoch 2/50
+ - 1s - loss: 0.1836 - acc: 0.9567
+Epoch 3/50
+ - 1s - loss: 0.1808 - acc: 0.9567
+Epoch 4/50
+ - 1s - loss: 0.1795 - acc: 0.9567
+Epoch 5/50
+ - 1s - loss: 0.1789 - acc: 0.9567
+Epoch 6/50
+ - 1s - loss: 0.1786 - acc: 0.9567
+Epoch 7/50
+ - 1s - loss: 0.1784 - acc: 0.9567
+Epoch 8/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 9/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 10/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 11/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 12/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 13/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 14/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 15/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 16/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 17/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 18/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 19/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 20/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 21/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 22/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 23/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 24/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 25/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 26/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 27/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 28/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 29/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 30/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 31/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 32/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 33/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 34/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 35/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 36/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 37/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 38/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 39/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 40/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 41/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 42/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 43/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 44/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 45/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 46/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 47/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 48/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+Epoch 49/50
+ - 1s - loss: 0.1783 - acc: 0.9567
+Epoch 50/50
+ - 1s - loss: 0.1782 - acc: 0.9567
+
+Results for Deep Neural Network trained on original "Others" dataset tested with original "ComputationalChemistry" dataset:
+	Accuracy: 94.28%, Precision: 0.0, Recall: 0.0, F-Score: 0.0
+	Confusion Matrix:
+[[49397     0]
+ [ 2998     0]]
+
+Results for Deep Neural Network trained on original "Others" dataset tested with original "Astronomy" dataset:
+	Accuracy: 92.8%, Precision: 0.0, Recall: 0.0, F-Score: 0.0
+	Confusion Matrix:
+[[62496     0]
+ [ 4848     0]]
+
+Results for Deep Neural Network trained on original "Others" dataset tested with original "ComputationalBiology" dataset:
+	Accuracy: 91.02%, Precision: 0.0, Recall: 0.0, F-Score: 0.0
+	Confusion Matrix:
+[[159216      0]
+ [ 15717      0]]
+
+Resampling data for the ComputationalChemistry dataset...
+
+Resampling data for the Astronomy dataset...
+
+Resampling data for the ComputationalBiology dataset...
+
+Resampling data for the Others dataset...
+
+Encoded Targets for Resampled ComputationalChemistry Dataset:
+	NEUTRAL –> Encoded as: 0, Count: 34174 / 73895, Percentile: 46.0%
+	INSECURE –> Encoded as: 1, Count: 39721 / 73895, Percentile: 54.0%
+
+Encoded Targets for Resampled Astronomy Dataset:
+	NEUTRAL –> Encoded as: 0, Count: 41222 / 90186, Percentile: 46.0%
+	INSECURE –> Encoded as: 1, Count: 48964 / 90186, Percentile: 54.0%
+
+Encoded Targets for Resampled ComputationalBiology Dataset:
+	NEUTRAL –> Encoded as: 0, Count: 109019 / 236055, Percentile: 46.0%
+	INSECURE –> Encoded as: 1, Count: 127036 / 236055, Percentile: 54.0%
+
+Encoded Targets for Resampled Others Dataset:
+	NEUTRAL –> Encoded as: 0, Count: 3601 / 7806, Percentile: 46.0%
+	INSECURE –> Encoded as: 1, Count: 4205 / 7806, Percentile: 54.0%
+
+========================================= Fitting Prior Learner Classification Models for Partitioned Datasets =========================================
+
+
+Finished building "DTC" classifier model for resampled "ComputationalChemistry" dataset.
+Finished building "RFC" classifier model for resampled "ComputationalChemistry" dataset.
+Finished building "KNN" classifier model for resampled "ComputationalChemistry" dataset.
+Finished building "ANN" classifier model for resampled "ComputationalChemistry" dataset.
+Finished building "NBC" classifier model for resampled "ComputationalChemistry" dataset.
+
+
+Finished building "DTC" classifier model for resampled "Astronomy" dataset.
+Finished building "RFC" classifier model for resampled "Astronomy" dataset.
+Finished building "KNN" classifier model for resampled "Astronomy" dataset.
+Finished building "ANN" classifier model for resampled "Astronomy" dataset.
+Finished building "NBC" classifier model for resampled "Astronomy" dataset.
+
+
+Finished building "DTC" classifier model for resampled "ComputationalBiology" dataset.
+Finished building "RFC" classifier model for resampled "ComputationalBiology" dataset.
+Finished building "KNN" classifier model for resampled "ComputationalBiology" dataset.
+Finished building "ANN" classifier model for resampled "ComputationalBiology" dataset.
+Finished building "NBC" classifier model for resampled "ComputationalBiology" dataset.
+
+
+Finished building "DTC" classifier model for resampled "Others" dataset.
+Finished building "RFC" classifier model for resampled "Others" dataset.
+Finished building "KNN" classifier model for resampled "Others" dataset.
+Finished building "ANN" classifier model for resampled "Others" dataset.
+Finished building "NBC" classifier model for resampled "Others" dataset.
+
+================================ Testing Prior Classifiers against ComputationalChemistry Dataset for Transfer Learning ================================
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on resampled "ComputationalChemistry" dataset, tested with resampled "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.58      0.75      0.65     41222
+    INSECURE       0.72      0.54      0.62     48964
+
+   micro avg       0.64      0.64      0.64     90186
+   macro avg       0.65      0.64      0.63     90186
+weighted avg       0.65      0.64      0.63     90186
+
+Confusion Matrix:
+[[30836 10386]
+ [22457 26507]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on resampled "ComputationalChemistry" dataset, tested with resampled "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.56      0.81      0.66     41222
+    INSECURE       0.74      0.46      0.57     48964
+
+   micro avg       0.62      0.62      0.62     90186
+   macro avg       0.65      0.64      0.62     90186
+weighted avg       0.66      0.62      0.61     90186
+
+Confusion Matrix:
+[[33383  7839]
+ [26203 22761]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on resampled "ComputationalChemistry" dataset, tested with resampled "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.47      0.63      0.54     41222
+    INSECURE       0.56      0.39      0.46     48964
+
+   micro avg       0.50      0.50      0.50     90186
+   macro avg       0.51      0.51      0.50     90186
+weighted avg       0.52      0.50      0.49     90186
+
+Confusion Matrix:
+[[26132 15090]
+ [29933 19031]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on resampled "ComputationalChemistry" dataset, tested with resampled "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.51      0.56      0.53     41222
+    INSECURE       0.60      0.55      0.58     48964
+
+   micro avg       0.56      0.56      0.56     90186
+   macro avg       0.56      0.56      0.55     90186
+weighted avg       0.56      0.56      0.56     90186
+
+Confusion Matrix:
+[[22956 18266]
+ [21793 27171]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on resampled "ComputationalChemistry" dataset, tested with resampled "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.62      0.01      0.02     41222
+    INSECURE       0.54      1.00      0.70     48964
+
+   micro avg       0.54      0.54      0.54     90186
+   macro avg       0.58      0.50      0.36     90186
+weighted avg       0.58      0.54      0.39     90186
+
+Confusion Matrix:
+[[  356 40866]
+ [  214 48750]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on resampled "ComputationalChemistry" dataset, tested with resampled "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.55      0.75      0.63    109019
+    INSECURE       0.69      0.48      0.56    127036
+
+   micro avg       0.60      0.60      0.60    236055
+   macro avg       0.62      0.61      0.60    236055
+weighted avg       0.62      0.60      0.60    236055
+
+Confusion Matrix:
+[[81320 27699]
+ [66388 60648]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on resampled "ComputationalChemistry" dataset, tested with resampled "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.53      0.86      0.66    109019
+    INSECURE       0.74      0.36      0.48    127036
+
+   micro avg       0.59      0.59      0.59    236055
+   macro avg       0.64      0.61      0.57    236055
+weighted avg       0.65      0.59      0.56    236055
+
+Confusion Matrix:
+[[93269 15750]
+ [81817 45219]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on resampled "ComputationalChemistry" dataset, tested with resampled "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.46      0.74      0.57    109019
+    INSECURE       0.52      0.24      0.33    127036
+
+   micro avg       0.47      0.47      0.47    236055
+   macro avg       0.49      0.49      0.45    236055
+weighted avg       0.49      0.47      0.44    236055
+
+Confusion Matrix:
+[[81109 27910]
+ [96914 30122]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on resampled "ComputationalChemistry" dataset, tested with resampled "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.40      0.52      0.45    109019
+    INSECURE       0.43      0.31      0.36    127036
+
+   micro avg       0.41      0.41      0.41    236055
+   macro avg       0.41      0.42      0.41    236055
+weighted avg       0.42      0.41      0.40    236055
+
+Confusion Matrix:
+[[57160 51859]
+ [87372 39664]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on resampled "ComputationalChemistry" dataset, tested with resampled "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.52      0.02      0.03    109019
+    INSECURE       0.54      0.99      0.70    127036
+
+   micro avg       0.54      0.54      0.54    236055
+   macro avg       0.53      0.50      0.37    236055
+weighted avg       0.53      0.54      0.39    236055
+
+Confusion Matrix:
+[[  1870 107149]
+ [  1755 125281]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on resampled "ComputationalChemistry" dataset, tested with resampled "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       1.00      1.00      1.00      3601
+    INSECURE       1.00      1.00      1.00      4205
+
+   micro avg       1.00      1.00      1.00      7806
+   macro avg       1.00      1.00      1.00      7806
+weighted avg       1.00      1.00      1.00      7806
+
+Confusion Matrix:
+[[3601    0]
+ [   0 4205]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on resampled "ComputationalChemistry" dataset, tested with resampled "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       1.00      1.00      1.00      3601
+    INSECURE       1.00      1.00      1.00      4205
+
+   micro avg       1.00      1.00      1.00      7806
+   macro avg       1.00      1.00      1.00      7806
+weighted avg       1.00      1.00      1.00      7806
+
+Confusion Matrix:
+[[3601    0]
+ [   0 4205]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on resampled "ComputationalChemistry" dataset, tested with resampled "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       1.00      0.99      0.99      3601
+    INSECURE       0.99      1.00      0.99      4205
+
+   micro avg       0.99      0.99      0.99      7806
+   macro avg       0.99      0.99      0.99      7806
+weighted avg       0.99      0.99      0.99      7806
+
+Confusion Matrix:
+[[3560   41]
+ [   6 4199]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on resampled "ComputationalChemistry" dataset, tested with resampled "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.83      0.50      0.63      3601
+    INSECURE       0.68      0.91      0.78      4205
+
+   micro avg       0.72      0.72      0.72      7806
+   macro avg       0.76      0.71      0.70      7806
+weighted avg       0.75      0.72      0.71      7806
+
+Confusion Matrix:
+[[1807 1794]
+ [ 370 3835]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on resampled "ComputationalChemistry" dataset, tested with resampled "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.69      0.03      0.07      3601
+    INSECURE       0.54      0.99      0.70      4205
+
+   micro avg       0.55      0.55      0.55      7806
+   macro avg       0.62      0.51      0.38      7806
+weighted avg       0.61      0.55      0.41      7806
+
+Confusion Matrix:
+[[ 125 3476]
+ [  56 4149]]
+
+====================================== Testing Prior Classifiers against Astronomy Dataset for Transfer Learning =======================================
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on resampled "Astronomy" dataset, tested with resampled "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.55      0.77      0.64     34174
+    INSECURE       0.70      0.47      0.56     39721
+
+   micro avg       0.61      0.61      0.61     73895
+   macro avg       0.63      0.62      0.60     73895
+weighted avg       0.63      0.61      0.60     73895
+
+Confusion Matrix:
+[[26146  8028]
+ [21066 18655]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on resampled "Astronomy" dataset, tested with resampled "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.55      0.83      0.67     34174
+    INSECURE       0.75      0.42      0.54     39721
+
+   micro avg       0.61      0.61      0.61     73895
+   macro avg       0.65      0.63      0.60     73895
+weighted avg       0.66      0.61      0.60     73895
+
+Confusion Matrix:
+[[28506  5668]
+ [22940 16781]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on resampled "Astronomy" dataset, tested with resampled "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.48      0.75      0.58     34174
+    INSECURE       0.58      0.30      0.40     39721
+
+   micro avg       0.51      0.51      0.51     73895
+   macro avg       0.53      0.52      0.49     73895
+weighted avg       0.53      0.51      0.48     73895
+
+Confusion Matrix:
+[[25554  8620]
+ [27806 11915]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on resampled "Astronomy" dataset, tested with resampled "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.49      0.38      0.43     34174
+    INSECURE       0.55      0.66      0.60     39721
+
+   micro avg       0.53      0.53      0.53     73895
+   macro avg       0.52      0.52      0.52     73895
+weighted avg       0.52      0.53      0.52     73895
+
+Confusion Matrix:
+[[12923 21251]
+ [13411 26310]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on resampled "Astronomy" dataset, tested with resampled "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.42      0.04      0.07     34174
+    INSECURE       0.54      0.95      0.69     39721
+
+   micro avg       0.53      0.53      0.53     73895
+   macro avg       0.48      0.50      0.38     73895
+weighted avg       0.48      0.53      0.40     73895
+
+Confusion Matrix:
+[[ 1339 32835]
+ [ 1816 37905]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on resampled "Astronomy" dataset, tested with resampled "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.55      0.75      0.63    109019
+    INSECURE       0.69      0.48      0.56    127036
+
+   micro avg       0.60      0.60      0.60    236055
+   macro avg       0.62      0.61      0.60    236055
+weighted avg       0.62      0.60      0.60    236055
+
+Confusion Matrix:
+[[81320 27699]
+ [66388 60648]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on resampled "Astronomy" dataset, tested with resampled "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.53      0.86      0.66    109019
+    INSECURE       0.74      0.36      0.48    127036
+
+   micro avg       0.59      0.59      0.59    236055
+   macro avg       0.64      0.61      0.57    236055
+weighted avg       0.65      0.59      0.56    236055
+
+Confusion Matrix:
+[[93269 15750]
+ [81817 45219]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on resampled "Astronomy" dataset, tested with resampled "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.46      0.74      0.57    109019
+    INSECURE       0.52      0.24      0.33    127036
+
+   micro avg       0.47      0.47      0.47    236055
+   macro avg       0.49      0.49      0.45    236055
+weighted avg       0.49      0.47      0.44    236055
+
+Confusion Matrix:
+[[81109 27910]
+ [96914 30122]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on resampled "Astronomy" dataset, tested with resampled "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.40      0.52      0.45    109019
+    INSECURE       0.43      0.31      0.36    127036
+
+   micro avg       0.41      0.41      0.41    236055
+   macro avg       0.41      0.42      0.41    236055
+weighted avg       0.42      0.41      0.40    236055
+
+Confusion Matrix:
+[[57160 51859]
+ [87372 39664]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on resampled "Astronomy" dataset, tested with resampled "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.52      0.02      0.03    109019
+    INSECURE       0.54      0.99      0.70    127036
+
+   micro avg       0.54      0.54      0.54    236055
+   macro avg       0.53      0.50      0.37    236055
+weighted avg       0.53      0.54      0.39    236055
+
+Confusion Matrix:
+[[  1870 107149]
+ [  1755 125281]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on resampled "Astronomy" dataset, tested with resampled "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       1.00      1.00      1.00      3601
+    INSECURE       1.00      1.00      1.00      4205
+
+   micro avg       1.00      1.00      1.00      7806
+   macro avg       1.00      1.00      1.00      7806
+weighted avg       1.00      1.00      1.00      7806
+
+Confusion Matrix:
+[[3601    0]
+ [   0 4205]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on resampled "Astronomy" dataset, tested with resampled "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       1.00      1.00      1.00      3601
+    INSECURE       1.00      1.00      1.00      4205
+
+   micro avg       1.00      1.00      1.00      7806
+   macro avg       1.00      1.00      1.00      7806
+weighted avg       1.00      1.00      1.00      7806
+
+Confusion Matrix:
+[[3601    0]
+ [   0 4205]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on resampled "Astronomy" dataset, tested with resampled "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       1.00      0.99      0.99      3601
+    INSECURE       0.99      1.00      0.99      4205
+
+   micro avg       0.99      0.99      0.99      7806
+   macro avg       0.99      0.99      0.99      7806
+weighted avg       0.99      0.99      0.99      7806
+
+Confusion Matrix:
+[[3560   41]
+ [   6 4199]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on resampled "Astronomy" dataset, tested with resampled "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.83      0.50      0.63      3601
+    INSECURE       0.68      0.91      0.78      4205
+
+   micro avg       0.72      0.72      0.72      7806
+   macro avg       0.76      0.71      0.70      7806
+weighted avg       0.75      0.72      0.71      7806
+
+Confusion Matrix:
+[[1807 1794]
+ [ 370 3835]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on resampled "Astronomy" dataset, tested with resampled "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.69      0.03      0.07      3601
+    INSECURE       0.54      0.99      0.70      4205
+
+   micro avg       0.55      0.55      0.55      7806
+   macro avg       0.62      0.51      0.38      7806
+weighted avg       0.61      0.55      0.41      7806
+
+Confusion Matrix:
+[[ 125 3476]
+ [  56 4149]]
+
+================================= Testing Prior Classifiers against ComputationalBiology Dataset for Transfer Learning =================================
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on resampled "ComputationalBiology" dataset, tested with resampled "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.55      0.77      0.64     34174
+    INSECURE       0.70      0.47      0.56     39721
+
+   micro avg       0.61      0.61      0.61     73895
+   macro avg       0.63      0.62      0.60     73895
+weighted avg       0.63      0.61      0.60     73895
+
+Confusion Matrix:
+[[26146  8028]
+ [21066 18655]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on resampled "ComputationalBiology" dataset, tested with resampled "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.55      0.83      0.67     34174
+    INSECURE       0.75      0.42      0.54     39721
+
+   micro avg       0.61      0.61      0.61     73895
+   macro avg       0.65      0.63      0.60     73895
+weighted avg       0.66      0.61      0.60     73895
+
+Confusion Matrix:
+[[28506  5668]
+ [22940 16781]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on resampled "ComputationalBiology" dataset, tested with resampled "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.48      0.75      0.58     34174
+    INSECURE       0.58      0.30      0.40     39721
+
+   micro avg       0.51      0.51      0.51     73895
+   macro avg       0.53      0.52      0.49     73895
+weighted avg       0.53      0.51      0.48     73895
+
+Confusion Matrix:
+[[25554  8620]
+ [27806 11915]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on resampled "ComputationalBiology" dataset, tested with resampled "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.49      0.38      0.43     34174
+    INSECURE       0.55      0.66      0.60     39721
+
+   micro avg       0.53      0.53      0.53     73895
+   macro avg       0.52      0.52      0.52     73895
+weighted avg       0.52      0.53      0.52     73895
+
+Confusion Matrix:
+[[12923 21251]
+ [13411 26310]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on resampled "ComputationalBiology" dataset, tested with resampled "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.42      0.04      0.07     34174
+    INSECURE       0.54      0.95      0.69     39721
+
+   micro avg       0.53      0.53      0.53     73895
+   macro avg       0.48      0.50      0.38     73895
+weighted avg       0.48      0.53      0.40     73895
+
+Confusion Matrix:
+[[ 1339 32835]
+ [ 1816 37905]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on resampled "ComputationalBiology" dataset, tested with resampled "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.58      0.75      0.65     41222
+    INSECURE       0.72      0.54      0.62     48964
+
+   micro avg       0.64      0.64      0.64     90186
+   macro avg       0.65      0.64      0.63     90186
+weighted avg       0.65      0.64      0.63     90186
+
+Confusion Matrix:
+[[30836 10386]
+ [22457 26507]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on resampled "ComputationalBiology" dataset, tested with resampled "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.56      0.81      0.66     41222
+    INSECURE       0.74      0.46      0.57     48964
+
+   micro avg       0.62      0.62      0.62     90186
+   macro avg       0.65      0.64      0.62     90186
+weighted avg       0.66      0.62      0.61     90186
+
+Confusion Matrix:
+[[33383  7839]
+ [26203 22761]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on resampled "ComputationalBiology" dataset, tested with resampled "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.47      0.63      0.54     41222
+    INSECURE       0.56      0.39      0.46     48964
+
+   micro avg       0.50      0.50      0.50     90186
+   macro avg       0.51      0.51      0.50     90186
+weighted avg       0.52      0.50      0.49     90186
+
+Confusion Matrix:
+[[26132 15090]
+ [29933 19031]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on resampled "ComputationalBiology" dataset, tested with resampled "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.51      0.56      0.53     41222
+    INSECURE       0.60      0.55      0.58     48964
+
+   micro avg       0.56      0.56      0.56     90186
+   macro avg       0.56      0.56      0.55     90186
+weighted avg       0.56      0.56      0.56     90186
+
+Confusion Matrix:
+[[22956 18266]
+ [21793 27171]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on resampled "ComputationalBiology" dataset, tested with resampled "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.62      0.01      0.02     41222
+    INSECURE       0.54      1.00      0.70     48964
+
+   micro avg       0.54      0.54      0.54     90186
+   macro avg       0.58      0.50      0.36     90186
+weighted avg       0.58      0.54      0.39     90186
+
+Confusion Matrix:
+[[  356 40866]
+ [  214 48750]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on resampled "ComputationalBiology" dataset, tested with resampled "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       1.00      1.00      1.00      3601
+    INSECURE       1.00      1.00      1.00      4205
+
+   micro avg       1.00      1.00      1.00      7806
+   macro avg       1.00      1.00      1.00      7806
+weighted avg       1.00      1.00      1.00      7806
+
+Confusion Matrix:
+[[3601    0]
+ [   0 4205]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on resampled "ComputationalBiology" dataset, tested with resampled "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       1.00      1.00      1.00      3601
+    INSECURE       1.00      1.00      1.00      4205
+
+   micro avg       1.00      1.00      1.00      7806
+   macro avg       1.00      1.00      1.00      7806
+weighted avg       1.00      1.00      1.00      7806
+
+Confusion Matrix:
+[[3601    0]
+ [   0 4205]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on resampled "ComputationalBiology" dataset, tested with resampled "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       1.00      0.99      0.99      3601
+    INSECURE       0.99      1.00      0.99      4205
+
+   micro avg       0.99      0.99      0.99      7806
+   macro avg       0.99      0.99      0.99      7806
+weighted avg       0.99      0.99      0.99      7806
+
+Confusion Matrix:
+[[3560   41]
+ [   6 4199]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on resampled "ComputationalBiology" dataset, tested with resampled "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.83      0.50      0.63      3601
+    INSECURE       0.68      0.91      0.78      4205
+
+   micro avg       0.72      0.72      0.72      7806
+   macro avg       0.76      0.71      0.70      7806
+weighted avg       0.75      0.72      0.71      7806
+
+Confusion Matrix:
+[[1807 1794]
+ [ 370 3835]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on resampled "ComputationalBiology" dataset, tested with resampled "Others" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.69      0.03      0.07      3601
+    INSECURE       0.54      0.99      0.70      4205
+
+   micro avg       0.55      0.55      0.55      7806
+   macro avg       0.62      0.51      0.38      7806
+weighted avg       0.61      0.55      0.41      7806
+
+Confusion Matrix:
+[[ 125 3476]
+ [  56 4149]]
+
+======================================== Testing Prior Classifiers against Others Dataset for Transfer Learning ========================================
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on resampled "Others" dataset, tested with resampled "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.55      0.77      0.64     34174
+    INSECURE       0.70      0.47      0.56     39721
+
+   micro avg       0.61      0.61      0.61     73895
+   macro avg       0.63      0.62      0.60     73895
+weighted avg       0.63      0.61      0.60     73895
+
+Confusion Matrix:
+[[26146  8028]
+ [21066 18655]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on resampled "Others" dataset, tested with resampled "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.55      0.83      0.67     34174
+    INSECURE       0.75      0.42      0.54     39721
+
+   micro avg       0.61      0.61      0.61     73895
+   macro avg       0.65      0.63      0.60     73895
+weighted avg       0.66      0.61      0.60     73895
+
+Confusion Matrix:
+[[28506  5668]
+ [22940 16781]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on resampled "Others" dataset, tested with resampled "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.48      0.75      0.58     34174
+    INSECURE       0.58      0.30      0.40     39721
+
+   micro avg       0.51      0.51      0.51     73895
+   macro avg       0.53      0.52      0.49     73895
+weighted avg       0.53      0.51      0.48     73895
+
+Confusion Matrix:
+[[25554  8620]
+ [27806 11915]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on resampled "Others" dataset, tested with resampled "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.49      0.38      0.43     34174
+    INSECURE       0.55      0.66      0.60     39721
+
+   micro avg       0.53      0.53      0.53     73895
+   macro avg       0.52      0.52      0.52     73895
+weighted avg       0.52      0.53      0.52     73895
+
+Confusion Matrix:
+[[12923 21251]
+ [13411 26310]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on resampled "Others" dataset, tested with resampled "ComputationalChemistry" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.42      0.04      0.07     34174
+    INSECURE       0.54      0.95      0.69     39721
+
+   micro avg       0.53      0.53      0.53     73895
+   macro avg       0.48      0.50      0.38     73895
+weighted avg       0.48      0.53      0.40     73895
+
+Confusion Matrix:
+[[ 1339 32835]
+ [ 1816 37905]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on resampled "Others" dataset, tested with resampled "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.58      0.75      0.65     41222
+    INSECURE       0.72      0.54      0.62     48964
+
+   micro avg       0.64      0.64      0.64     90186
+   macro avg       0.65      0.64      0.63     90186
+weighted avg       0.65      0.64      0.63     90186
+
+Confusion Matrix:
+[[30836 10386]
+ [22457 26507]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on resampled "Others" dataset, tested with resampled "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.56      0.81      0.66     41222
+    INSECURE       0.74      0.46      0.57     48964
+
+   micro avg       0.62      0.62      0.62     90186
+   macro avg       0.65      0.64      0.62     90186
+weighted avg       0.66      0.62      0.61     90186
+
+Confusion Matrix:
+[[33383  7839]
+ [26203 22761]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on resampled "Others" dataset, tested with resampled "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.47      0.63      0.54     41222
+    INSECURE       0.56      0.39      0.46     48964
+
+   micro avg       0.50      0.50      0.50     90186
+   macro avg       0.51      0.51      0.50     90186
+weighted avg       0.52      0.50      0.49     90186
+
+Confusion Matrix:
+[[26132 15090]
+ [29933 19031]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on resampled "Others" dataset, tested with resampled "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.51      0.56      0.53     41222
+    INSECURE       0.60      0.55      0.58     48964
+
+   micro avg       0.56      0.56      0.56     90186
+   macro avg       0.56      0.56      0.55     90186
+weighted avg       0.56      0.56      0.56     90186
+
+Confusion Matrix:
+[[22956 18266]
+ [21793 27171]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on resampled "Others" dataset, tested with resampled "Astronomy" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.62      0.01      0.02     41222
+    INSECURE       0.54      1.00      0.70     48964
+
+   micro avg       0.54      0.54      0.54     90186
+   macro avg       0.58      0.50      0.36     90186
+weighted avg       0.58      0.54      0.39     90186
+
+Confusion Matrix:
+[[  356 40866]
+ [  214 48750]]
+
+************************************************************************* DTC **************************************************************************
+Results for "DTC" trained on resampled "Others" dataset, tested with resampled "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.55      0.75      0.63    109019
+    INSECURE       0.69      0.48      0.56    127036
+
+   micro avg       0.60      0.60      0.60    236055
+   macro avg       0.62      0.61      0.60    236055
+weighted avg       0.62      0.60      0.60    236055
+
+Confusion Matrix:
+[[81320 27699]
+ [66388 60648]]
+
+************************************************************************* RFC **************************************************************************
+Results for "RFC" trained on resampled "Others" dataset, tested with resampled "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.53      0.86      0.66    109019
+    INSECURE       0.74      0.36      0.48    127036
+
+   micro avg       0.59      0.59      0.59    236055
+   macro avg       0.64      0.61      0.57    236055
+weighted avg       0.65      0.59      0.56    236055
+
+Confusion Matrix:
+[[93269 15750]
+ [81817 45219]]
+
+************************************************************************* KNN **************************************************************************
+Results for "KNN" trained on resampled "Others" dataset, tested with resampled "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.46      0.74      0.57    109019
+    INSECURE       0.52      0.24      0.33    127036
+
+   micro avg       0.47      0.47      0.47    236055
+   macro avg       0.49      0.49      0.45    236055
+weighted avg       0.49      0.47      0.44    236055
+
+Confusion Matrix:
+[[81109 27910]
+ [96914 30122]]
+
+************************************************************************* ANN **************************************************************************
+Results for "ANN" trained on resampled "Others" dataset, tested with resampled "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.40      0.52      0.45    109019
+    INSECURE       0.43      0.31      0.36    127036
+
+   micro avg       0.41      0.41      0.41    236055
+   macro avg       0.41      0.42      0.41    236055
+weighted avg       0.42      0.41      0.40    236055
+
+Confusion Matrix:
+[[57160 51859]
+ [87372 39664]]
+
+************************************************************************* NBC **************************************************************************
+Results for "NBC" trained on resampled "Others" dataset, tested with resampled "ComputationalBiology" dataset:
+              precision    recall  f1-score   support
+
+     NEUTRAL       0.52      0.02      0.03    109019
+    INSECURE       0.54      0.99      0.70    127036
+
+   micro avg       0.54      0.54      0.54    236055
+   macro avg       0.53      0.50      0.37    236055
+weighted avg       0.53      0.54      0.39    236055
+
+Confusion Matrix:
+[[  1870 107149]
+ [  1755 125281]]
+
+Using 50 epoch(s) and a batch size of 10...
+
+================================ Training Deep Neural Network with ComputationalChemistry Dataset for Transfer Learning ================================
+Epoch 1/50
+ - 8s - loss: 1.2944 - acc: 0.4970
+Epoch 2/50
+ - 8s - loss: 0.6903 - acc: 0.5376
+Epoch 3/50
+ - 8s - loss: 0.6902 - acc: 0.5377
+Epoch 4/50
+ - 8s - loss: 0.6904 - acc: 0.5377
+Epoch 5/50
+ - 8s - loss: 0.6902 - acc: 0.5378
+Epoch 6/50
+ - 8s - loss: 1.0595 - acc: 0.5378
+Epoch 7/50
+ - 8s - loss: 0.6903 - acc: 0.5377
+Epoch 8/50
+ - 8s - loss: 0.6903 - acc: 0.5377
+Epoch 9/50
+ - 8s - loss: 0.6903 - acc: 0.5377
+Epoch 10/50
+ - 8s - loss: 1.2275 - acc: 0.5380
+Epoch 11/50
+ - 8s - loss: 0.6903 - acc: 0.5377
+Epoch 12/50
+ - 8s - loss: 0.6904 - acc: 0.5378
+Epoch 13/50
+ - 8s - loss: 0.6903 - acc: 0.5377
+Epoch 14/50
+ - 9s - loss: 0.6903 - acc: 0.5378
+Epoch 15/50
+ - 8s - loss: 0.6903 - acc: 0.5376
+Epoch 16/50
+ - 8s - loss: 0.6904 - acc: 0.5377
+Epoch 17/50
+ - 8s - loss: 0.6908 - acc: 0.5378
+Epoch 18/50
+ - 8s - loss: 0.6903 - acc: 0.5377
+Epoch 19/50
+ - 8s - loss: 0.6903 - acc: 0.5378
+Epoch 20/50
+ - 8s - loss: 0.6903 - acc: 0.5377
+Epoch 21/50
+ - 8s - loss: 0.6903 - acc: 0.5376
+Epoch 22/50
+ - 8s - loss: 0.6906 - acc: 0.5376
+Epoch 23/50
+ - 8s - loss: 0.6903 - acc: 0.5376
+Epoch 24/50
+ - 8s - loss: 0.6902 - acc: 0.5377
+Epoch 25/50
+ - 8s - loss: 0.6951 - acc: 0.5384
+Epoch 26/50
+ - 8s - loss: 2.9049 - acc: 0.5384
+Epoch 27/50
+ - 8s - loss: 0.6903 - acc: 0.5376
+Epoch 28/50
+ - 8s - loss: 0.6903 - acc: 0.5376
+Epoch 29/50
+ - 8s - loss: 0.6902 - acc: 0.5379
+Epoch 30/50
+ - 8s - loss: 0.6901 - acc: 0.5380
+Epoch 31/50
+ - 8s - loss: 0.7561 - acc: 0.5380
+Epoch 32/50
+ - 8s - loss: 1.0064 - acc: 0.5379
+Epoch 33/50
+ - 8s - loss: 0.6902 - acc: 0.5378
+Epoch 34/50
+ - 8s - loss: 0.6902 - acc: 0.5378
+Epoch 35/50
+ - 8s - loss: 0.6904 - acc: 0.5379
+Epoch 36/50
+ - 8s - loss: 0.6903 - acc: 0.5377
+Epoch 37/50
+ - 8s - loss: 0.6902 - acc: 0.5377
+Epoch 38/50
+ - 8s - loss: 0.6903 - acc: 0.5377
+Epoch 39/50
+ - 8s - loss: 0.6903 - acc: 0.5376
+Epoch 40/50
+ - 9s - loss: 0.6904 - acc: 0.5378
+Epoch 41/50
+ - 8s - loss: 0.6902 - acc: 0.5378
+Epoch 42/50
+ - 8s - loss: 0.6903 - acc: 0.5378
+Epoch 43/50
+ - 8s - loss: 0.7176 - acc: 0.5381
+Epoch 44/50
+ - 8s - loss: 0.6902 - acc: 0.5377
+Epoch 45/50
+ - 8s - loss: 0.6903 - acc: 0.5377
+Epoch 46/50
+ - 8s - loss: 1.0158 - acc: 0.5385
+Epoch 47/50
+ - 8s - loss: 0.6901 - acc: 0.5380
+Epoch 48/50
+ - 8s - loss: 0.6903 - acc: 0.5380
+Epoch 49/50
+ - 8s - loss: 0.6901 - acc: 0.5378
+Epoch 50/50
+ - 9s - loss: 0.6916 - acc: 0.5382
+
+Results for Deep Neural Network trained on resampled "ComputationalChemistry" dataset tested with resampled "Astronomy" dataset:
+	Accuracy: 54.65%, Precision: 1.0, Recall: 0.55, F-Score: 0.7
+	Confusion Matrix:
+[[  548 40674]
+ [  229 48735]]
+
+Results for Deep Neural Network trained on resampled "ComputationalChemistry" dataset tested with resampled "ComputationalBiology" dataset:
+	Accuracy: 54.06%, Precision: 1.0, Recall: 0.54, F-Score: 0.7
+	Confusion Matrix:
+[[   963 108056]
+ [   396 126640]]
+
+Results for Deep Neural Network trained on resampled "ComputationalChemistry" dataset tested with resampled "Others" dataset:
+	Accuracy: 53.88%, Precision: 1.0, Recall: 0.54, F-Score: 0.7
+	Confusion Matrix:
+[[   1 3600]
+ [   0 4205]]
+
+====================================== Training Deep Neural Network with Astronomy Dataset for Transfer Learning =======================================
+Epoch 1/50
+ - 10s - loss: 0.6913 - acc: 0.5433
+Epoch 2/50
+ - 10s - loss: 0.6895 - acc: 0.5430
+Epoch 3/50
+ - 10s - loss: 0.6894 - acc: 0.5431
+Epoch 4/50
+ - 10s - loss: 0.6903 - acc: 0.5434
+Epoch 5/50
+ - 10s - loss: 0.6899 - acc: 0.5435
+Epoch 6/50
+ - 10s - loss: 0.6894 - acc: 0.5432
+Epoch 7/50
+ - 10s - loss: 0.6897 - acc: 0.5432
+Epoch 8/50
+ - 10s - loss: 0.6895 - acc: 0.5431
+Epoch 9/50
+ - 10s - loss: 0.6894 - acc: 0.5431
+Epoch 10/50
+ - 10s - loss: 0.6899 - acc: 0.5431
+Epoch 11/50
+ - 10s - loss: 0.6894 - acc: 0.5431
+Epoch 12/50
+ - 10s - loss: 0.6895 - acc: 0.5431
+Epoch 13/50
+ - 10s - loss: 0.6898 - acc: 0.5432
+Epoch 14/50
+ - 10s - loss: 0.6897 - acc: 0.5430
+Epoch 15/50
+ - 10s - loss: 0.6961 - acc: 0.5434
+Epoch 16/50
+ - 10s - loss: 0.6917 - acc: 0.5434
+Epoch 17/50
+ - 10s - loss: 0.6894 - acc: 0.5431
+Epoch 18/50
+ - 10s - loss: 0.6907 - acc: 0.5435
+Epoch 19/50
+ - 10s - loss: 0.6912 - acc: 0.5434
+Epoch 20/50
+ - 10s - loss: 0.6898 - acc: 0.5433
+Epoch 21/50
+ - 10s - loss: 0.6894 - acc: 0.5431
+Epoch 22/50
+ - 10s - loss: 0.6899 - acc: 0.5435
+Epoch 23/50
+ - 10s - loss: 0.6899 - acc: 0.5434
+Epoch 24/50
+ - 10s - loss: 0.6905 - acc: 0.5438
+Epoch 25/50
+ - 10s - loss: 0.6892 - acc: 0.5433
+Epoch 26/50
+ - 10s - loss: 0.6895 - acc: 0.5430
+Epoch 27/50
+ - 10s - loss: 0.6901 - acc: 0.5435
+Epoch 28/50
+ - 10s - loss: 0.6894 - acc: 0.5430
+Epoch 29/50
+ - 10s - loss: 0.6897 - acc: 0.5436
+Epoch 30/50
+ - 10s - loss: 0.6892 - acc: 0.5433
+Epoch 31/50
+ - 10s - loss: 0.6905 - acc: 0.5439
+Epoch 32/50
+ - 10s - loss: 0.6907 - acc: 0.5439
+Epoch 33/50
+ - 10s - loss: 0.6900 - acc: 0.5440
+Epoch 34/50
+ - 10s - loss: 0.6892 - acc: 0.5437
+Epoch 35/50
+ - 10s - loss: 0.6897 - acc: 0.5432
+Epoch 36/50
+ - 10s - loss: 0.6891 - acc: 0.5438
+Epoch 37/50
+ - 10s - loss: 0.6892 - acc: 0.5436
+Epoch 38/50
+ - 10s - loss: 0.6912 - acc: 0.5437
+Epoch 39/50
+ - 10s - loss: 0.6896 - acc: 0.5433
+Epoch 40/50
+ - 10s - loss: 0.6896 - acc: 0.5430
+Epoch 41/50
+ - 10s - loss: 0.6898 - acc: 0.5439
+Epoch 42/50
+ - 10s - loss: 0.6896 - acc: 0.5438
+Epoch 43/50
+ - 10s - loss: 0.6903 - acc: 0.5433
+Epoch 44/50
+ - 10s - loss: 0.6895 - acc: 0.5435
+Epoch 45/50
+ - 10s - loss: 0.6898 - acc: 0.5433
+Epoch 46/50
+ - 10s - loss: 0.6913 - acc: 0.5437
+Epoch 47/50
+ - 10s - loss: 0.6891 - acc: 0.5439
+Epoch 48/50
+ - 10s - loss: 0.6896 - acc: 0.5439
+Epoch 49/50
+ - 10s - loss: 0.6893 - acc: 0.5438
+Epoch 50/50
+ - 10s - loss: 0.6887 - acc: 0.5444
+
+Results for Deep Neural Network trained on resampled "Astronomy" dataset tested with resampled "ComputationalChemistry" dataset:
+	Accuracy: 53.77%, Precision: 1.0, Recall: 0.54, F-Score: 0.7
+	Confusion Matrix:
+[[   11 34163]
+ [    0 39721]]
+
+Results for Deep Neural Network trained on resampled "Astronomy" dataset tested with resampled "ComputationalBiology" dataset:
+	Accuracy: 53.95%, Precision: 1.0, Recall: 0.54, F-Score: 0.7
+	Confusion Matrix:
+[[   559 108460]
+ [   237 126799]]
+
+Results for Deep Neural Network trained on resampled "Astronomy" dataset tested with resampled "Others" dataset:
+	Accuracy: 53.88%, Precision: 1.0, Recall: 0.54, F-Score: 0.7
+	Confusion Matrix:
+[[   1 3600]
+ [   0 4205]]
+
+================================= Training Deep Neural Network with ComputationalBiology Dataset for Transfer Learning =================================
+Epoch 1/50
+ - 27s - loss: 0.6904 - acc: 0.5384
+Epoch 2/50
+ - 27s - loss: 0.6907 - acc: 0.5384
+Epoch 3/50
+ - 27s - loss: 0.6905 - acc: 0.5385
+Epoch 4/50
+ - 27s - loss: 0.6907 - acc: 0.5385
+Epoch 5/50
+ - 27s - loss: 0.6905 - acc: 0.5385
+Epoch 6/50
+ - 27s - loss: 0.6904 - acc: 0.5386
+Epoch 7/50
+ - 27s - loss: 0.6906 - acc: 0.5386
+Epoch 8/50
+ - 27s - loss: 0.6906 - acc: 0.5392
+Epoch 9/50
+ - 27s - loss: 0.6927 - acc: 0.5391
+Epoch 10/50
+ - 27s - loss: 0.6907 - acc: 0.5390
+Epoch 11/50
+ - 27s - loss: 0.6917 - acc: 0.5392
+Epoch 12/50
+ - 27s - loss: 0.6899 - acc: 0.5389
+Epoch 13/50
+ - 27s - loss: 0.6902 - acc: 0.5393
+Epoch 14/50
+ - 27s - loss: 0.6926 - acc: 0.5395
+Epoch 15/50
+ - 27s - loss: 0.6911 - acc: 0.5393
+Epoch 16/50
+ - 27s - loss: 0.6903 - acc: 0.5395
+Epoch 17/50
+ - 27s - loss: 0.6923 - acc: 0.5392
+Epoch 18/50
+ - 27s - loss: 0.6902 - acc: 0.5391
+Epoch 19/50
+ - 27s - loss: 0.6900 - acc: 0.5393
+Epoch 20/50
+ - 27s - loss: 0.6902 - acc: 0.5391
+Epoch 21/50
+ - 27s - loss: 0.6901 - acc: 0.5393
+Epoch 22/50
+ - 27s - loss: 0.6920 - acc: 0.5385
+Epoch 23/50
+ - 27s - loss: 0.6956 - acc: 0.5388
+Epoch 24/50
+ - 27s - loss: 0.6915 - acc: 0.5382
+Epoch 25/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 26/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 27/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 28/50
+ - 27s - loss: 0.6902 - acc: 0.5382
+Epoch 29/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 30/50
+ - 27s - loss: 0.6902 - acc: 0.5382
+Epoch 31/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 32/50
+ - 27s - loss: 0.6902 - acc: 0.5382
+Epoch 33/50
+ - 27s - loss: 0.6902 - acc: 0.5382
+Epoch 34/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 35/50
+ - 27s - loss: 0.6902 - acc: 0.5382
+Epoch 36/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 37/50
+ - 28s - loss: 0.6903 - acc: 0.5382
+Epoch 38/50
+ - 27s - loss: 0.6902 - acc: 0.5382
+Epoch 39/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 40/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 41/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 42/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 43/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 44/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 45/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 46/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 47/50
+ - 27s - loss: 0.6902 - acc: 0.5382
+Epoch 48/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 49/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+Epoch 50/50
+ - 27s - loss: 0.6903 - acc: 0.5382
+
+Results for Deep Neural Network trained on resampled "ComputationalBiology" dataset tested with resampled "ComputationalChemistry" dataset:
+	Accuracy: 53.76%, Precision: 1.0, Recall: 0.54, F-Score: 0.7
+	Confusion Matrix:
+[[    2 34172]
+ [    0 39721]]
+
+Results for Deep Neural Network trained on resampled "ComputationalBiology" dataset tested with resampled "Astronomy" dataset:
+	Accuracy: 54.29%, Precision: 1.0, Recall: 0.54, F-Score: 0.7
+	Confusion Matrix:
+[[    2 41220]
+ [    0 48964]]
+
+Results for Deep Neural Network trained on resampled "ComputationalBiology" dataset tested with resampled "Others" dataset:
+	Accuracy: 53.88%, Precision: 1.0, Recall: 0.54, F-Score: 0.7
+	Confusion Matrix:
+[[   1 3600]
+ [   0 4205]]
+
+======================================== Training Deep Neural Network with Others Dataset for Transfer Learning ========================================
+Epoch 1/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 2/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 3/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 4/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 5/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 6/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 7/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 8/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 9/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 10/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 11/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 12/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 13/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 14/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 15/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 16/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 17/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 18/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 19/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 20/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 21/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 22/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 23/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 24/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 25/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 26/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 27/50
+ - 1s - loss: 0.6902 - acc: 0.5388
+Epoch 28/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 29/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 30/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 31/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 32/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 33/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 34/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 35/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 36/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 37/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 38/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 39/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 40/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 41/50
+ - 1s - loss: 0.6902 - acc: 0.5388
+Epoch 42/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 43/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 44/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 45/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 46/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 47/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 48/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 49/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+Epoch 50/50
+ - 1s - loss: 0.6901 - acc: 0.5388
+
+Results for Deep Neural Network trained on resampled "Others" dataset tested with resampled "ComputationalChemistry" dataset:
+	Accuracy: 53.76%, Precision: 1.0, Recall: 0.54, F-Score: 0.7
+	Confusion Matrix:
+[[    2 34172]
+ [    0 39721]]
+
+Results for Deep Neural Network trained on resampled "Others" dataset tested with resampled "Astronomy" dataset:
+	Accuracy: 54.29%, Precision: 1.0, Recall: 0.54, F-Score: 0.7
+	Confusion Matrix:
+[[    2 41220]
+ [    0 48964]]
+
+Results for Deep Neural Network trained on resampled "Others" dataset tested with resampled "ComputationalBiology" dataset:
+	Accuracy: 53.82%, Precision: 1.0, Recall: 0.54, F-Score: 0.7
+	Confusion Matrix:
+[[     4 109015]
+ [     0 127036]]
