@@ -1,4 +1,3 @@
-#!/usr/local/bin/python3
 # coding: utf-8
 
 """
@@ -25,7 +24,7 @@ import sys
 
 sys.path.append(os.path.join(os.path.dirname(__file__), "..", "utilities")) # add "../utilities" to module import search path
 import logger # for custom "Logger" class
-import update_1_utils_p3 as u1u_p3 # for custom "update_1_utils_p3" utility functions
+import update_1_utils_p2 as u1u_p2 # for custom "update_1_utils_p3" utility functions
 
 #-------------------------------------------- Check Command Line Arguments -------------------------------------------#
 
@@ -44,9 +43,9 @@ valid_dataset_names = ["update_1_dataset.csv", "dataset.csv", "Dataset.csv", "DA
 
 for d in valid_dataset_names:
   if(os.path.exists(d)):
-    print "Loading dataset file..."
+    print "\nLoading dataset file..."
     original_df = pd.read_csv(d)
-    print "Done.\n"
+    print "Done."
     break
   else:
     print "ERROR::002::FILE_NOT_FOUND"
@@ -74,17 +73,17 @@ for security_flag in ["INSECURE", "NEUTRAL"]:
   print "\n************************** START OF ANALYSIS FOR", security_flag, "SECURITY FLAG **************************"
 
   print "\nGrouping", security_flag, "modified file name tokens by thier respective commit hash scripts..."
-  files_grouped_by_hash_df = u1u_p3.get_files_grouped_by_hash(validated_df, security_flag)
+  files_grouped_by_hash_df = u1u_p2.get_files_grouped_by_hash(validated_df, security_flag)
   list_of_file_groups = files_grouped_by_hash_df['MODIFIED_FILE'].tolist()  # [['a.c'], ['b.py', 'c.cpp'], ....]
 
   print "\nApplying TF-IDF text mining algorithm..."
-  tfidf_features, term_document_matrix = u1u_p3.apply_tfidf(list_of_file_groups)
+  tfidf_features, term_document_matrix = u1u_p2.apply_tfidf(list_of_file_groups)
 
   print "\nSorting", security_flag, "token scores in decending order..."
-  top_features = u1u_p3.get_top_features(term_document_matrix, tfidf_features)
+  top_features = u1u_p2.get_top_features(term_document_matrix, tfidf_features)
 
   print "\nWriting the top 1000", security_flag, "modified file token scores to file..."
-  u1u_p3.write_features_to_file(top_features, security_flag)
+  u1u_p2.write_features_to_file(top_features, security_flag)
 
   print "\n************************** END OF ANALYSIS FOR", security_flag, "SECURITY FLAG **************************"
 

@@ -44,9 +44,9 @@ valid_dataset_names = ["update_1_dataset.csv", "dataset.csv", "Dataset.csv", "DA
 
 for d in valid_dataset_names:
   if(os.path.exists(d)):
-    print("Loading dataset file...")
+    print("\nLoading dataset file...")
     original_df = pd.read_csv(d)
-    print("Done.\n")
+    print("Done.")
     break
   else:
     print("ERROR::002::FILE_NOT_FOUND")
