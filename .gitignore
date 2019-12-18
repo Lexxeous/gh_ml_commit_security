@@ -1,11 +1,7 @@
 #------------------------------------------- Update 1 --------------------------------------------#
 
 # Dataset files
-update_1/LOCKED_FINAL_CSC4220_5220_DATASET.csv
-update_1/dataset.csv
-update_1/Dataset.csv
-update_1/DATASET.csv
-update_1/test.csv
+update_1/update_1_dataset.csv
 
 # Virtual Python environment
 update_1/proj
@@ -23,9 +19,6 @@ update_1/validated_file_names.csv
 update_1/*.pyc
 
 # Misc files
-update_1/test.py
-update_1/Notes.txt
-update_1/testing_push.txt
 
 #------------------------------------------- Update 2 --------------------------------------------#
 

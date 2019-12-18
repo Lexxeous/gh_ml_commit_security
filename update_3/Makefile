@@ -7,7 +7,7 @@ run:
 run_3:
 	python3 update_3_main.py $(log_file)
 
-clean: clean_utils
+clean:
 	rm $(log_file) $(src_pyc)
 
 clean_utils:
